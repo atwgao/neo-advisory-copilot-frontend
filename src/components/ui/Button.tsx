@@ -10,9 +10,9 @@ import {
 } from '@/components/ui/tooltip';
 
 const colorStyles = {
-  primary: 'bg-brand-red text-white hover:bg-brand-red-dark',
-  secondary: 'bg-brand-navy text-white hover:bg-brand-navy-light',
-  filled: 'bg-brand-red text-white hover:bg-brand-red-dark',
+  primary: 'bg-brand-navy text-white hover:bg-brand-navy-light',
+  secondary: 'bg-brand-navy/80 text-white hover:bg-brand-navy',
+  filled: 'bg-brand-navy text-white hover:bg-brand-navy-light',
   danger: 'bg-brand-red-dark text-white hover:bg-brand-red',
   amber: 'bg-amber-500 text-white hover:bg-amber-600',
   blue: 'bg-brand-blue-accent/10 text-brand-navy ring-1 ring-inset ring-brand-blue-accent/20 hover:bg-brand-blue-accent/20',

@@ -155,7 +155,7 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
               href={isSuperUser() ? '/' : '/documents'}
               className="flex items-center relative z-10"
             >
-              <Logo className="h-16 w-auto translate-y-3" disableLink={true} />
+              <Logo className="h-16 w-auto translate-y-1" disableLink={true} />
             </Link>
           </div>
         </div>

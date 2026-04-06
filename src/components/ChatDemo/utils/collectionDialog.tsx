@@ -303,7 +303,7 @@ const InfoRow: React.FC<{
     >
       <span className="font-medium text-gray-200">{label}</span>
       <div
-        className={`text-gray-300 ${
+        className={`text-text-muted ${
           isLongContent ? 'mt-2' : 'flex items-center space-x-4'
         }`}
       >
@@ -315,7 +315,7 @@ const InfoRow: React.FC<{
           values.map((item, index) => (
             <span key={index} className="flex items-center">
               {item.label && (
-                <span className="mr-2 text-gray-400">{item.label}:</span>
+                <span className="mr-2 text-text-body">{item.label}:</span>
               )}
               <span>{formatValue(item.value)}</span>
             </span>

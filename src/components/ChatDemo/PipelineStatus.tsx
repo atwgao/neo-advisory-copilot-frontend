@@ -75,7 +75,7 @@ export function PipelineStatus({
       <div
         className={`w-2 h-2 rounded-full mr-2 ${isConnected ? 'bg-green-500' : 'bg-red-500'}`}
       />
-      <span className="text-xs text-gray-400">
+      <span className="text-xs text-text-body">
         Status: {isConnected ? 'Connected' : 'No Connection'}
       </span>
     </div>

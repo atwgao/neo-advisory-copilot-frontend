@@ -225,7 +225,7 @@ const Index: React.FC = () => {
                   </div>
 
                   <div className="pt-6 border-t border-border">
-                    <h3 className="text-sm font-medium text-gray-400 mb-4">
+                    <h3 className="text-sm font-medium text-text-body mb-4">
                       Danger Zone
                     </h3>
                     <DeleteButton

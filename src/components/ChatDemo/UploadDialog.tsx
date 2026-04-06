@@ -64,7 +64,7 @@ export const UploadDialog: React.FC<UploadDialogProps> = ({
             <p>Drop the files or folders here ...</p>
           ) : (
             <div>
-              <Upload className="mx-auto h-12 w-12 text-gray-400" />
+              <Upload className="mx-auto h-12 w-12 text-text-body" />
               <p>Drag and drop files or folders here, or click to select</p>
             </div>
           )}

@@ -202,7 +202,7 @@ const Index: React.FC = () => {
         className="w-64 h-full"
       />
       <div className="absolute bottom-2 right-2 bg-white rounded-full p-1">
-        <UserRound className="w-4 h-4 text-gray-400" />
+        <UserRound className="w-4 h-4 text-text-primary" />
       </div>
     </div>
   );
@@ -297,7 +297,7 @@ const Index: React.FC = () => {
                         key={`empty-${index}`}
                         className="w-full h-[120px] flex justify-center"
                       >
-                        <div className="w-64 h-full flex items-center justify-center text-gray-400">
+                        <div className="w-64 h-full flex items-center justify-center text-text-primary">
                           {index === 0 && 'No matching collections found'}
                         </div>
                       </div>
@@ -340,7 +340,7 @@ const Index: React.FC = () => {
                         key={`empty-shared-${index}`}
                         className="w-full h-[120px] flex justify-center"
                       >
-                        <div className="w-64 h-full flex items-center justify-center text-gray-400">
+                        <div className="w-64 h-full flex items-center justify-center text-text-primary">
                           {index === 0 && 'No matching collections found'}
                         </div>
                       </div>
@@ -368,7 +368,7 @@ const Index: React.FC = () => {
           !loading && (
             <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 min-h-[300px]">
               <div className="w-full h-[120px] flex justify-center col-span-full">
-                <div className="w-64 h-full flex items-center justify-center text-gray-400">
+                <div className="w-64 h-full flex items-center justify-center text-text-primary">
                   No collections found
                 </div>
               </div>

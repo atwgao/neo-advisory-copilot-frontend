@@ -336,7 +336,7 @@ const RequestsCard: React.FC = () => {
             dimensions.height > 0 &&
             (logData.every((d) => d.count === 0) ? (
               <div className="flex items-center justify-center h-full">
-                <p className="text-gray-500">
+                <p className="text-text-body">
                   No requests in the last 24 hours
                 </p>
               </div>
