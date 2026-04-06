@@ -200,12 +200,21 @@ const LoginPage: React.FC = () => {
 
   return (
     <Layout includeFooter={false}>
-      <div className="flex flex-col items-center justify-center min-h-screen p-8 gap-16">
-        <div className="bg-zinc-100 dark:bg-zinc-800 shadow-md rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md flex flex-col">
+      <div className="flex flex-col items-center justify-center min-h-screen p-8 gap-16 bg-surface-offwhite">
+        <div className="bg-white shadow-card rounded-card px-8 pt-6 pb-8 mb-4 w-full max-w-md flex flex-col">
           <div className="flex-grow">
+            <div className="flex justify-center mb-6">
+              <Image
+                src={(brandingConfig as any).loginLogo?.src || '/images/momentum-mark.svg'}
+                alt={(brandingConfig as any).loginLogo?.alt || 'Momentum'}
+                width={64}
+                height={64}
+                priority={true}
+              />
+            </div>
             <div className="mb-4">
               <label
-                className="block text-gray-700 dark:text-gray-200 text-sm font-bold mb-2"
+                className="block text-text-primary text-sm font-bold mb-2"
                 htmlFor="sanitizedDeploymentUrl"
               >
                 {brandingConfig.deploymentName} Deployment URL
@@ -231,14 +240,14 @@ const LoginPage: React.FC = () => {
               <div className="mb-4">
                 <div className="flex items-center justify-between">
                   <label
-                    className="block text-gray-700 dark:text-gray-200 text-sm font-bold mb-2"
+                    className="block text-text-primary text-sm font-bold mb-2"
                     htmlFor="email"
                   >
                     Email
                   </label>
                   <span
                     onClick={() => router.push('/auth/signup')}
-                    className="text-sm font-semibold text-accent-base cursor-pointer hover:underline"
+                    className="text-sm font-semibold text-brand-red cursor-pointer hover:underline"
                   >
                     Sign up with Email
                   </span>
@@ -255,7 +264,7 @@ const LoginPage: React.FC = () => {
 
               <div className="mb-6">
                 <label
-                  className="block text-gray-700 dark:text-gray-200 text-sm font-bold mb-2"
+                  className="block text-text-primary text-sm font-bold mb-2"
                   htmlFor="password"
                 >
                   Password
@@ -274,7 +283,7 @@ const LoginPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={togglePasswordVisibility}
-                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200"
+                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-text-muted hover:text-text-primary"
                   >
                     {showPassword ? (
                       <EyeOff className="h-5 w-5" aria-hidden="true" />
@@ -289,8 +298,8 @@ const LoginPage: React.FC = () => {
             <div className="mb-4">
               <Button
                 onClick={handleSubmit}
-                color="primary"
-                className="w-full my-2"
+                color="filled"
+                className="w-full my-2 bg-brand-red hover:bg-brand-red-dark text-white rounded-button"
                 disabled={isLoading}
               >
                 {isLoading ? 'Signing in...' : 'Sign in with Email'}
@@ -298,8 +307,8 @@ const LoginPage: React.FC = () => {
 
               <Button
                 onClick={() => handleOAuthSignIn('google')}
-                color="primary"
-                className="w-full my-2 relative"
+                color="filled"
+                className="w-full my-2 relative bg-brand-red hover:bg-brand-red-dark text-white rounded-button"
                 disabled={true}
                 tooltip="OAuth sign-in requires using the Supabase auth provider."
               >
@@ -318,8 +327,8 @@ const LoginPage: React.FC = () => {
 
               <Button
                 onClick={() => handleOAuthSignIn('github')}
-                color="primary"
-                className="w-full my-2 relative"
+                color="filled"
+                className="w-full my-2 relative bg-brand-red hover:bg-brand-red-dark text-white rounded-button"
                 disabled={true}
                 tooltip="OAuth sign-in requires using the Supabase auth provider."
               >
