@@ -106,10 +106,10 @@ export function ContainerObjectCard({
         />
       </div>
       <div className="relative flex flex-col rounded-2xl p-4 sm:p-6 w-full h-full -mt-4">
-        <h2 className="text-xl font-medium truncate w-full text-white mb-2">
+        <h2 className="text-xl font-medium truncate w-full text-text-primary mb-2">
           {containerObject.name}
         </h2>
-        <p className="text-white">
+        <p className="text-text-body">
           {containerObject.description
             ? containerObject.description.length > 32
               ? `${containerObject.description.substring(0, 32)}...`
