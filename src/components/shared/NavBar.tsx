@@ -171,7 +171,6 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
               </div>
             )}
             <div className="absolute right-4 top-3 flex items-center space-x-4">
-            <div className="flex items-center space-x-4">
               {brandingConfig.navbar.showDocsButton && (
                 <Button
                   color="primary"
