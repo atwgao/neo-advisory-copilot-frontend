@@ -149,22 +149,23 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
     return (
       <nav ref={ref} className="bg-brand-navy shadow z-50 w-full">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          {/* Row 1: Centered logo + text */}
-          <div className="flex justify-center items-center h-14">
+          {/* Centered logo row */}
+          <div className="flex justify-center items-center h-16">
             <Link
               href={isSuperUser() ? '/' : '/documents'}
               className="flex items-center"
             >
-              <Logo className="h-12 w-auto" disableLink={true} />
-              <span className="ml-2 text-sm font-light tracking-widest uppercase text-white">
-                {brandingConfig.navbar.appName}
-              </span>
+              <Logo className="h-16 w-auto" disableLink={true} />
             </Link>
           </div>
-          {/* Row 2: Left nav pills + right avatar */}
+          {/* Nav row: text label + pills left, avatar right */}
           {isSignedIn && (
             <div className="flex items-center justify-between pb-2">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-3">
+                <span className="text-xs font-light tracking-widest uppercase text-white/70 mr-1">
+                  {brandingConfig.navbar.appName}
+                </span>
+                <span className="text-white/30">|</span>
                 <NavItems
                   isAuthenticated={isAuthenticated}
                   role={role}
