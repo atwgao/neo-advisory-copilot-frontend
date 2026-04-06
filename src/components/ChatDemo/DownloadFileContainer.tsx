@@ -77,7 +77,7 @@ const DownloadButtonContainer: React.FC<DownloadFileContainerProps> = ({
         {isDownloading ? (
           <Spinner className="h-6 w-6 text-white" />
         ) : (
-          <FileDown className="h-6 w-6" />
+          <FileDown className="h-6 w-6 text-text-primary" />
         )}
       </Button>
     </div>

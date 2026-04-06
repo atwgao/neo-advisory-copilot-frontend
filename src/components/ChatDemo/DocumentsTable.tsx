@@ -206,7 +206,7 @@ const DocumentsTable: React.FC<DocumentsTableProps> = ({
           shape="slim"
           tooltip="View Document Info"
         >
-          <FileSearch2 className="h-6 w-6" />
+          <FileSearch2 className="h-6 w-6 text-text-primary" />
         </Button>
       </div>
     );

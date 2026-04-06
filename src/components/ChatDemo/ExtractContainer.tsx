@@ -70,7 +70,7 @@ const ExtractButtonContainer: React.FC<ExtractContainerProps> = ({
         {isExtracting ? (
           <Spinner className="h-6 w-6 text-white" />
         ) : (
-          <FileOutput className="h-6 w-6" />
+          <FileOutput className="h-6 w-6 text-text-primary" />
         )}
       </Button>
     </div>

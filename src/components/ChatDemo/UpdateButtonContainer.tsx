@@ -83,7 +83,7 @@ const UpdateButtonContainer: React.FC<UpdateButtonContainerProps> = ({
         {isUpdating ? (
           <Spinner className="h-6 w-6 text-white" />
         ) : (
-          <FileUp className="h-6 w-6" />
+          <FileUp className="h-6 w-6 text-white" />
         )}
       </Button>
       <input
