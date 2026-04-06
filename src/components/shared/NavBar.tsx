@@ -147,30 +147,30 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
     };
 
     return (
-      <nav ref={ref} className="bg-brand-navy shadow z-50 w-full">
+      <nav ref={ref} className="bg-brand-navy shadow z-50 w-full relative">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-14 items-center">
-            <div className="flex items-center space-x-4">
+          <div className="flex flex-col items-center w-full">
+            <div className="flex justify-center items-center h-14 w-full">
               <Link
                 href={isSuperUser() ? '/' : '/documents'}
-                className="flex-shrink-0 flex items-center"
+                className="flex items-center"
               >
                 <Logo className="h-12 w-auto" disableLink={true} />
                 <span className="ml-2 text-sm font-light tracking-widest uppercase text-white">
                   {brandingConfig.navbar.appName}
                 </span>
               </Link>
-              {isSignedIn && (
-                <>
-                  <span className="text-white/40">|</span>
-                  <NavItems
-                    isAuthenticated={isAuthenticated}
-                    role={role}
-                    pathname={pathname}
-                  />
-                </>
-              )}
             </div>
+            {isSignedIn && (
+              <div className="flex items-center justify-center space-x-2 pb-2">
+                <NavItems
+                  isAuthenticated={isAuthenticated}
+                  role={role}
+                  pathname={pathname}
+                />
+              </div>
+            )}
+            <div className="absolute right-4 top-3 flex items-center space-x-4">
             <div className="flex items-center space-x-4">
               {brandingConfig.navbar.showDocsButton && (
                 <Button
