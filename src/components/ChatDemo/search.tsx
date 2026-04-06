@@ -51,7 +51,7 @@ export const Search: FC<SearchProps> = ({
 
   return (
     <form onSubmit={handleSubmit} className="w-full">
-      <div className="relative flex items-center focus-within:ring-2 focus-within:ring-accent-base focus-within:ring-offset-2 focus-within:ring-offset-zinc-800 rounded-full">
+      <div className="relative flex items-center focus-within:ring-2 focus-within:ring-brand-red focus-within:ring-offset-2 focus-within:ring-offset-white rounded-full">
         <input
           id="search-bar"
           value={value}
@@ -60,13 +60,13 @@ export const Search: FC<SearchProps> = ({
           }
           autoFocus
           placeholder={placeholder}
-          className="w-full px-4 py-2 h-10 bg-zinc-700 text-zinc-200 rounded-l-full focus:outline-none"
+          className="w-full px-4 py-2 h-10 bg-white text-text-body border border-border rounded-l-full focus:outline-none placeholder:text-text-muted"
           disabled={disabled}
         />
         <Button
           type="submit"
           color="filled"
-          className="px-4 py-2 h-10 rounded-r-full"
+          className="px-4 py-2 h-10 rounded-r-full bg-brand-red hover:bg-brand-red-dark text-white"
           disabled={disabled}
         >
           <ArrowRight size={20} />
