@@ -19,6 +19,25 @@ module.exports = {
     },
     extend: {
       colors: {
+        'brand-red': {
+          DEFAULT: '#FF3A30',
+          dark: '#E0332A',
+        },
+        'brand-navy': {
+          DEFAULT: '#003366',
+          light: '#004080',
+        },
+        'brand-blue-accent': '#A1B9ED',
+        surface: {
+          offwhite: '#F9F9F9',
+          pale: '#F0F0F0',
+        },
+        text: {
+          primary: '#1A1A1A',
+          body: '#444746',
+          muted: '#595959',
+          inverse: '#FFFFFF',
+        },
         accent: {
           base: 'var(--accent-base)',
           light: 'var(--accent-light)',
@@ -36,7 +55,10 @@ module.exports = {
         color7: 'var(--color-7)',
         color8: 'var(--color-8)',
         color9: 'var(--color-9)',
-        border: 'var(--border)',
+        border: {
+          DEFAULT: 'var(--border)',
+          light: 'rgba(180, 180, 180, 0.88)',
+        },
         input: 'var(--input)',
         ring: 'var(--ring)',
         background: 'var(--background)',
@@ -79,9 +101,9 @@ module.exports = {
         },
       },
       backgroundColor: {
-        'primary-custom': 'var(--sciphi-primary)',
-        'secondary-custom': 'var(--sciphi-secondary)',
-        'accent-custom': 'var(--sciphi-accent)',
+        'primary-custom': '#003366',
+        'secondary-custom': '#004080',
+        'accent-custom': '#FF3A30',
       },
       textColor: {
         link: 'var(--link)',
@@ -91,6 +113,9 @@ module.exports = {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+        button: '24px',
+        card: '8px',
+        chip: '24px',
       },
       keyframes: {
         'accordion-down': {
@@ -118,6 +143,8 @@ module.exports = {
         header: 'var(--header-box-shadow)',
         shadow: 'var(--shadow)',
         'shadow-hover': 'var(--shadow-hover)',
+        card: '0 4px 12px rgba(0, 0, 0, 0.05)',
+        'card-hover': '0 8px 24px rgba(0, 0, 0, 0.1)',
       },
     },
   },
