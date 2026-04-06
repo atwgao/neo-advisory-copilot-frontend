@@ -211,7 +211,7 @@ const SearchPage: React.FC = () => {
             className={`main-content ${sidebarIsOpen ? '' : 'sidebar-closed'}`}
             ref={contentAreaRef}
           >
-            <div className="bg-white shadow-md pt-8 mt-4">
+            <div className="bg-white shadow-md pt-10 mt-8">
               <form onSubmit={handleSearch} className="py-4">
                 <div className="relative flex items-center focus-within:ring-2 focus-within:ring-accent-dark focus-within:ring-offset-2 focus-within:ring-offset-white rounded-full">
                   <input
