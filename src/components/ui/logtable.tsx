@@ -108,11 +108,11 @@ const LogTable: React.FC<LogTableProps> = ({ logs }) => {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-1/5 text-white">Run ID</TableHead>
-            <TableHead className="w-1/5 text-white">Run Type</TableHead>
-            <TableHead className="w-1/5 text-white">Timestamp</TableHead>
-            <TableHead className="w-1/5 text-white">User ID</TableHead>
-            <TableHead className="w-1/5 text-white">Entries</TableHead>
+            <TableHead className="w-1/5 text-text-primary">Run ID</TableHead>
+            <TableHead className="w-1/5 text-text-primary">Run Type</TableHead>
+            <TableHead className="w-1/5 text-text-primary">Timestamp</TableHead>
+            <TableHead className="w-1/5 text-text-primary">User ID</TableHead>
+            <TableHead className="w-1/5 text-text-primary">Entries</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

@@ -19,11 +19,11 @@ export const Title = ({
   return (
     <div className="flex items-center pb-4 mb-6 border-b gap-4">
       <div className="flex-1">
-        <label className="pr-2 block mb-1 text-zinc-400 text-left">
+        <label className="pr-2 block mb-1 text-text-muted text-left">
           Query:
         </label>
         <div
-          className=" text-zinc-200 text-ellipsis overflow-hidden whitespace-nowrap"
+          className=" text-text-primary text-ellipsis overflow-hidden whitespace-nowrap"
           title={query}
         >
           {query}
@@ -37,7 +37,7 @@ export const Title = ({
             router.push(getSearchUrl(encodeURIComponent(query)));
           }}
           type="button"
-          className="rounded flex gap-2 items-center bg-transparent px-2 py-1 text-md font-semibold text-accent-base hover:bg-zinc-900"
+          className="rounded flex gap-2 items-center bg-transparent px-2 py-1 text-md font-semibold text-accent-base hover:bg-surface-offwhite"
         >
           {model}
         </button> */}
@@ -46,7 +46,7 @@ export const Title = ({
             router.push(getSearchUrl(encodeURIComponent(query)));
           }}
           type="button"
-          className="rounded flex gap-2 items-center bg-transparent px-2 py-1 text-md font-semibold text-accent-base hover:bg-zinc-900"
+          className="rounded flex gap-2 items-center bg-transparent px-2 py-1 text-md font-semibold text-accent-base hover:bg-surface-offwhite"
         >
           {/* <RefreshCcw size={12}></RefreshCcw>Rewrite */}
         </button>

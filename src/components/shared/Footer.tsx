@@ -45,7 +45,7 @@ function SocialLink({
     href && (
       <Link href={href} className="group">
         <span className="sr-only">{children}</span>
-        <Icon className="h-5 w-5 fill-zinc-700 transition group-hover:fill-accent-base dark:group-hover:fill-accent-dark" />
+        <Icon className="h-5 w-5 fill-text-muted transition group-hover:fill-brand-red" />
       </Link>
     )
   );
@@ -53,8 +53,8 @@ function SocialLink({
 
 function SmallPrint() {
   return (
-    <div className="flex flex-col items-center justify-between sm:flex-row dark:border-white/5 mb-6">
-      <p className="text-xs text-zinc-600 dark:text-zinc-400">
+    <div className="flex flex-col items-center justify-between sm:flex-row  mb-6">
+      <p className="text-xs text-text-muted">
         &copy; Copyright {new Date().getFullYear()}.{' '}
         {brandingConfig.companyName} All rights reserved.
       </p>

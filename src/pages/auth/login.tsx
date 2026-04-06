@@ -215,31 +215,14 @@ const LoginPage: React.FC = () => {
                 priority={true}
               />
             </div>
-            <div className="mb-4">
-              <label
-                className="block text-text-primary text-sm font-bold mb-2"
-                htmlFor="sanitizedDeploymentUrl"
-              >
-                {brandingConfig.deploymentName} Deployment URL
-              </label>
-              {serverHealth === false && (
-                <span className="text-red-400 text-sm font-bold mb-2 block">
-                  Unable to communicate to the specified deployment. Check its
-                  status or try again.
-                </span>
-              )}
-              <Input
-                id="deploymentUrl"
-                name="deploymentUrl"
-                type="text"
-                placeholder="Deployment URL"
-                value={rawDeploymentUrl}
-                onChange={(e) => setRawDeploymentUrl(e.target.value)}
-                autoComplete="url"
-              />
-            </div>
+            {serverHealth === false && (
+              <span className="text-red-400 text-sm font-bold mb-2 block">
+                Unable to communicate with the server. Check its status or try
+                again.
+              </span>
+            )}
 
-            <form onSubmit={handleSubmit} className="mt-4">
+            <form onSubmit={handleSubmit} className="mt-0">
               <div className="mb-4">
                 <div className="flex items-center justify-between">
                   <label

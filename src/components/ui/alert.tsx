@@ -11,7 +11,7 @@ const alertVariants = cva(
       variant: {
         default: 'bg-background text-foreground',
         destructive:
-          'border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive',
+          'border-destructive/50 text-destructive [dark:border-destructive [&>svg]:text-destructive>svg]:text-destructive',
       },
     },
     defaultVariants: {
@@ -34,7 +34,7 @@ const Alert = React.forwardRef<
     {onClose && (
       <button
         onClick={onClose}
-        className="absolute top-2 right-2 p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
+        className="absolute top-2 right-2 p-1 rounded-full hover:bg-surface-offwhite"
         aria-label="Close"
       >
         <X size={16} />

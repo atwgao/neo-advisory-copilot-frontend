@@ -25,13 +25,15 @@ const VectorSearchResultItem: FC<{
             [{index}] {metadata.title}
           </h3>
           <div className="flex-grow"></div>
-          <span className="text-xs ml-2 whitespace-nowrap text-zinc-500">
+          <span className="text-xs ml-2 whitespace-nowrap text-text-muted">
             Similarity Score: {score.toFixed(3)}
           </span>
         </div>
 
         <p className="text-xs text-wrap break-words">{text}</p>
-        <p className="text-xs pt-4 text-zinc-500">Document ID: {document_id}</p>
+        <p className="text-xs pt-4 text-text-muted">
+          Document ID: {document_id}
+        </p>
       </div>
     </div>
   );
@@ -148,8 +150,8 @@ const ResultCarousel: FC<{
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="absolute -left-4 hover:bg-zinc-800" />
-      <CarouselNext className="absolute -right-4 hover:bg-zinc-800" />
+      <CarouselPrevious className="absolute -left-4 hover:bg-surface-offwhite" />
+      <CarouselNext className="absolute -right-4 hover:bg-surface-offwhite" />
     </Carousel>
   </div>
 );
@@ -160,10 +162,10 @@ export const SearchResults: React.FC<SearchResultsProps> = ({
   communities,
 }) => {
   return (
-    <div className="flex justify-center text-zinc-200 bg-zinc-900">
+    <div className="flex justify-center text-text-primary bg-white">
       <Tabs
         defaultValue="vectorSearch"
-        className="text-zinc-900 w-[95%] max-w-2xl px-10"
+        className="text-text-primary w-[95%] max-w-2xl px-10"
       >
         <TabsList>
           <TabsTrigger

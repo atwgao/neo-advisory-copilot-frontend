@@ -43,21 +43,21 @@ const HomePage = () => {
   return (
     <Layout includeFooter>
       <main className="w-full flex flex-col container h-screen-[calc(100%-4rem)]">
-        <div className="relative bg-white dark:bg-zinc-900 p-5">
+        <div className="relative bg-white p-5">
           <div className="flex flex-col lg:flex-row gap-4">
             {/* Left column - Alert */}
             <div className="w-full lg:w-2/3 flex flex-col gap-4">
               <Alert variant="default" className="flex flex-col">
                 <AlertTitle className="text-lg ">
                   <div className="flex gap-2 text-xl">
-                    <span className="text-gray-500 dark:text-gray-200 font-semibold">
+                    <span className="text-text-primary font-semibold">
                       You're connected to your {brandingConfig.deploymentName}{' '}
                       deployment!
                     </span>
                   </div>
                 </AlertTitle>
                 <AlertDescription>
-                  <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">
+                  <p className="mb-4 text-sm text-text-body">
                     Here you will find tools to manage your knowledge base,
                     documents, and advisory copilot capabilities.
                   </p>
@@ -68,7 +68,7 @@ const HomePage = () => {
                         <h3 className="text-sm font-semibold mb-1">
                           Documents
                         </h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-xs text-text-muted">
                           Upload, update, and delete documents and their
                           metadata.
                         </p>
@@ -80,7 +80,7 @@ const HomePage = () => {
                         <h3 className="text-sm font-semibold mb-1">
                           Collections
                         </h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-xs text-text-muted">
                           Manage and share groups of documents and create
                           knowledge graphs.
                         </p>
@@ -90,7 +90,7 @@ const HomePage = () => {
                       <MessageCircle className="w-5 h-5 text-primary" />
                       <div>
                         <h3 className="text-sm font-semibold mb-1">Chat</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-xs text-text-muted">
                           Generate RAG responses.
                         </p>
                       </div>
@@ -99,7 +99,7 @@ const HomePage = () => {
                       <ScanSearch className="w-5 h-5 text-primary" />
                       <div>
                         <h3 className="text-sm font-semibold mb-1">Search</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-xs text-text-muted">
                           Conduct search over your documents and collections.
                         </p>
                       </div>
@@ -108,7 +108,7 @@ const HomePage = () => {
                       <Users className="w-5 h-5 text-primary" />
                       <div>
                         <h3 className="text-sm font-semibold mb-1">Users</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-xs text-text-muted">
                           Track user queries, search results, and LLM responses.
                         </p>
                       </div>
@@ -117,7 +117,7 @@ const HomePage = () => {
                       <FileSearch className="w-5 h-5 text-primary" />
                       <div>
                         <h3 className="text-sm font-semibold mb-1">Logs</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-xs text-text-muted">
                           Track user queries, search results, and LLM responses.
                         </p>
                       </div>
@@ -128,7 +128,7 @@ const HomePage = () => {
                         <h3 className="text-sm font-semibold mb-1">
                           Analytics
                         </h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-xs text-text-muted">
                           Rich analytics and insights on your users' queries and
                           interactions.
                         </p>
@@ -138,7 +138,7 @@ const HomePage = () => {
                       <Settings className="w-5 h-5 text-primary" />
                       <div>
                         <h3 className="text-sm font-semibold mb-1">Settings</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">
+                        <p className="text-xs text-text-muted">
                           Manage your {brandingConfig.deploymentName} deployment
                           settings and configurations.
                         </p>

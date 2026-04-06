@@ -275,7 +275,7 @@ const Index: React.FC = () => {
       <>
         {personalCollections.length > 0 && (
           <div className="w-full mb-12">
-            <h2 className="text-xl font-semibold text-white mb-4">
+            <h2 className="text-xl font-semibold text-text-primary mb-4">
               Your Collections
             </h2>
             <div className="min-h-[300px]">
@@ -321,7 +321,7 @@ const Index: React.FC = () => {
 
         {sharedCollections.length > 0 && (
           <div className="w-full">
-            <h2 className="text-xl font-semibold text-white mb-4">
+            <h2 className="text-xl font-semibold text-text-primary mb-4">
               Shared With You
             </h2>
             <div className="min-h-[300px]">
@@ -392,7 +392,9 @@ const Index: React.FC = () => {
             <>
               <div className="mb-6">
                 <div className="flex items-center justify-between">
-                  <h1 className="text-2xl font-bold text-white">Collections</h1>
+                  <h1 className="text-2xl font-bold text-text-primary">
+                    Collections
+                  </h1>
                 </div>
 
                 <div className="flex items-center mt-6 gap-2">

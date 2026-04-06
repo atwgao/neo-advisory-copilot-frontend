@@ -65,13 +65,13 @@ const InfoRow: React.FC<{
   values: { label?: string; value: any }[];
   children?: React.ReactNode;
 }> = ({ label, values, children }) => (
-  <div className="flex items-center justify-between py-2 border-b border-gray-700">
+  <div className="flex items-center justify-between py-2 border-b border-border">
     <span className="font-medium">{label}:</span>
-    <span className="text-gray-300 flex items-center space-x-4">
+    <span className="text-text-body flex items-center space-x-4">
       {values.map((item, index) => (
         <span key={index} className="flex items-center">
           {item.label && (
-            <span className="mr-1 text-gray-500">{item.label}:</span>
+            <span className="mr-1 text-text-muted">{item.label}:</span>
           )}
           <span>{formatValue(item.value)}</span>
         </span>
@@ -88,19 +88,19 @@ const ExpandableInfoRow: React.FC<{
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="py-2 border-b border-gray-700">
+    <div className="py-2 border-b border-border">
       <div className="flex items-center justify-between">
         <span className="font-medium">{label}:</span>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="text-gray-300 flex items-center space-x-2"
+          className="text-text-body flex items-center space-x-2"
         >
           <span>{values?.length || 0} items</span>
           {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
       </div>
       {isExpanded && values && values.length > 0 && (
-        <div className="mt-2 pl-4 text-gray-300">
+        <div className="mt-2 pl-4 text-text-body">
           <div className="grid grid-cols-2 gap-2">
             {values.map((value, index) => (
               <div key={index}>
@@ -241,11 +241,11 @@ export const UserInfoDialog: React.FC<UserInfoDialogProps> = ({
             <Loader className="animate-spin" size={32} />
           </div>
         ) : userProfile ? (
-          <Card className="bg-zinc-900">
+          <Card className="bg-white border border-border">
             <CardHeader>
               <div className="flex items-center">
                 <div className="flex items-center space-x-4">
-                  <div className="bg-zinc-800 p-4 rounded-full">
+                  <div className="bg-surface-offwhite p-4 rounded-full">
                     <UserRound size={40} />
                   </div>
                   <div>
@@ -288,8 +288,8 @@ export const UserInfoDialog: React.FC<UserInfoDialogProps> = ({
                             <Badge variant="secondary">Admin</Badge>
                           )}
                         </div>
-                        <p className="text-gray-400">{userProfile?.email}</p>
-                        <p className="text-gray-400">
+                        <p className="text-text-muted">{userProfile?.email}</p>
+                        <p className="text-text-muted">
                           <CopyableContent
                             content={userProfile?.id}
                             truncated={userProfile?.id}
@@ -360,10 +360,10 @@ export const UserInfoDialog: React.FC<UserInfoDialogProps> = ({
                   <>
                     {userProfile?.bio && (
                       <div>
-                        <h3 className="text-sm font-medium text-gray-400 mb-2">
+                        <h3 className="text-sm font-medium text-text-muted mb-2">
                           Bio
                         </h3>
-                        <p className="text-gray-300">{userProfile.bio}</p>
+                        <p className="text-text-body">{userProfile.bio}</p>
                       </div>
                     )}
 

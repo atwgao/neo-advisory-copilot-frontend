@@ -247,8 +247,8 @@ const DocumentInfoDialog: React.FC<DocumentInfoDialogProps> = ({
   return (
     <>
       <Dialog open={open} onOpenChange={onClose}>
-        <DialogContent className="text-white max-w-4xl">
-          <div className="mt-4 space-y-2 h-[calc(90vh-120px)] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-300 -mr-4">
+        <DialogContent className="text-text-primary max-w-4xl">
+          <div className="mt-4 space-y-2 h-[calc(90vh-120px)] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 -mr-4">
             <DialogHeader>
               <DialogTitle className="text-xl font-bold mb-2">
                 Document Overview
@@ -406,15 +406,15 @@ const InfoRow: React.FC<{
 
   return (
     <div
-      className={`py-2 border-b border-gray-700/50 ${
+      className={`py-2 border-b border-border ${
         isLongContent
           ? 'flex flex-col space-y-2'
           : 'flex items-center justify-between'
       }`}
     >
-      <span className="font-medium text-gray-200">{label}:</span>
+      <span className="font-medium text-text-primary">{label}:</span>
       <span
-        className={`text-gray-300 ${isLongContent ? 'mt-1' : 'flex items-center space-x-4'}`}
+        className={`text-text-body ${isLongContent ? 'mt-1' : 'flex items-center space-x-4'}`}
       >
         {value !== undefined
           ? formatValue(value)
@@ -422,7 +422,7 @@ const InfoRow: React.FC<{
             ? values.map((item, index) => (
                 <span key={index} className="flex items-center">
                   {item.label && (
-                    <span className="mr-1 text-gray-400">{item.label}:</span>
+                    <span className="mr-1 text-text-muted">{item.label}:</span>
                   )}
                   <span>{formatValue(item.value)}</span>
                 </span>
@@ -441,19 +441,19 @@ const ExpandableInfoRow: React.FC<{
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="py-2 border-b border-gray-700">
+    <div className="py-2 border-b border-border">
       <div className="flex items-center justify-between">
         <span className="font-medium">{label}:</span>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="text-gray-300 flex items-center space-x-2"
+          className="text-text-body flex items-center space-x-2"
         >
           <span>{values?.length ?? 0} items</span>
           {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
       </div>
       {isExpanded && values && values.length > 0 && (
-        <div className="mt-2 pl-4 text-gray-300">
+        <div className="mt-2 pl-4 text-text-body">
           {values.map((value, index) => (
             <div key={index}>{value}</div>
           ))}
@@ -485,7 +485,7 @@ const ExpandableDocumentChunks: React.FC<{
       <div className="flex justify-end items-center mb-4">
         <button
           onClick={toggleAllExpanded}
-          className="text-accent-base hover:text-accent-dark transition-colors"
+          className="text-brand-red hover:text-brand-red-dark transition-colors"
         >
           {allExpanded ? 'Collapse All' : 'Expand All'}
         </button>
@@ -607,7 +607,7 @@ const ExpandableChunk: React.FC<{
   };
 
   return (
-    <div className="border border-gray-700 rounded-lg mb-4 bg-zinc-800/50 transition-colors">
+    <div className="border border-border rounded-lg mb-4 bg-surface-offwhite transition-colors">
       <div
         className="flex items-center justify-between p-4 cursor-pointer"
         onClick={toggleExpanded}
@@ -621,7 +621,7 @@ const ExpandableChunk: React.FC<{
               <Button
                 onClick={handleEdit}
                 color="filled"
-                className="text-gray-300 hover:text-white"
+                className="text-text-body hover:text-text-primary"
               >
                 <Edit className="h-5 w-5" />
               </Button>
@@ -634,7 +634,7 @@ const ExpandableChunk: React.FC<{
               </Button>
             </>
           )}
-          <button className="text-gray-300 hover:text-white transition-colors">
+          <button className="text-text-body hover:text-text-primary transition-colors">
             {localExpanded ? (
               <ChevronUp size={20} />
             ) : (
@@ -644,7 +644,7 @@ const ExpandableChunk: React.FC<{
         </div>
       </div>
       {localExpanded && (
-        <div className="px-6 pb-4 text-gray-300 space-y-6">
+        <div className="px-6 pb-4 text-text-body space-y-6">
           <div className="grid grid-cols-2 gap-4">
             <InfoRow label="Extraction ID" value={chunk.id} />
             <InfoRow label="Document ID" value={chunk.documentId} />
@@ -657,9 +657,9 @@ const ExpandableChunk: React.FC<{
             />
           </div>
 
-          <div className="space-y-2 bg-zinc-800 p-4 rounded-lg">
+          <div className="space-y-2 bg-white p-4 rounded-lg border border-border">
             <div className="flex items-center justify-between mb-2">
-              <span className="font-medium text-white">Content:</span>
+              <span className="font-medium text-text-primary">Content:</span>
               {isEditing && (
                 <div className="flex space-x-2">
                   <Button
@@ -688,22 +688,24 @@ const ExpandableChunk: React.FC<{
               <textarea
                 value={editText}
                 onChange={(e) => setEditText(e.target.value)}
-                className="w-full h-32 bg-zinc-900 text-gray-300 p-2 rounded-md border border-gray-700 focus:border-accent-dark focus:ring-1 focus:ring-accent-dark"
+                className="w-full h-32 bg-surface-offwhite text-text-body p-2 rounded-md border border-border focus:border-accent-dark focus:ring-1 focus:ring-accent-dark"
               />
             ) : (
-              <p className="pl-4 pr-2 py-2 text-gray-300 leading-relaxed">
+              <p className="pl-4 pr-2 py-2 text-text-body leading-relaxed">
                 {chunk.text}
               </p>
             )}
           </div>
 
-          <div className="bg-zinc-800 rounded-lg">
+          <div className="bg-white rounded-lg border border-border">
             <div
               className="flex items-center justify-between p-4 cursor-pointer"
               onClick={toggleMetadata}
             >
-              <span className="font-medium text-white">Chunk Metadata</span>
-              <button className="text-gray-300 hover:text-white transition-colors">
+              <span className="font-medium text-text-primary">
+                Chunk Metadata
+              </span>
+              <button className="text-text-body hover:text-text-primary transition-colors">
                 {metadataExpanded ? (
                   <ChevronUp size={16} />
                 ) : (
@@ -764,7 +766,7 @@ const ExpandableDocumentEntities: React.FC<{
       <div className="flex justify-end items-center mb-4">
         <button
           onClick={toggleAllExpanded}
-          className="text-accent-base hover:text-accent-dark transition-colors"
+          className="text-brand-red hover:text-brand-red-dark transition-colors"
         >
           {allExpanded ? 'Collapse All' : 'Expand All'}
         </button>
@@ -806,14 +808,14 @@ const ExpandableEntity: React.FC<{
   };
 
   return (
-    <div className="border border-gray-700 rounded-lg mb-4 bg-zinc-800/50 transition-colors">
+    <div className="border border-border rounded-lg mb-4 bg-surface-offwhite transition-colors">
       <div
         className="flex items-center justify-between p-4 cursor-pointer"
         onClick={toggleExpanded}
       >
         <span className="font-medium text-lg">{entity.name}</span>
         <div className="flex items-center space-x-2">
-          <button className="text-gray-300 hover:text-white transition-colors">
+          <button className="text-text-body hover:text-text-primary transition-colors">
             {localExpanded ? (
               <ChevronUp size={20} />
             ) : (
@@ -823,29 +825,31 @@ const ExpandableEntity: React.FC<{
         </div>
       </div>
       {localExpanded && (
-        <div className="px-6 pb-4 text-gray-300 space-y-6">
+        <div className="px-6 pb-4 text-text-body space-y-6">
           <div className="grid grid-cols-2 gap-4">
             <InfoRow label="Entity ID" value={entity.id} />
             <InfoRow label="Category" value={entity.category} />
           </div>
           <ExpandableInfoRow label="Chunk IDs" values={entity.chunkIds} />
 
-          <div className="space-y-2 bg-zinc-800 p-4 rounded-lg">
+          <div className="space-y-2 bg-white p-4 rounded-lg border border-border">
             <div className="flex items-center justify-between mb-2">
-              <span className="font-medium text-white">Content:</span>
+              <span className="font-medium text-text-primary">Content:</span>
             </div>
-            <p className="pl-4 pr-2 py-2 text-gray-300 leading-relaxed">
+            <p className="pl-4 pr-2 py-2 text-text-body leading-relaxed">
               {entity.description}
             </p>
           </div>
 
-          <div className="bg-zinc-800 rounded-lg">
+          <div className="bg-white rounded-lg border border-border">
             <div
               className="flex items-center justify-between p-4 cursor-pointer"
               onClick={toggleMetadata}
             >
-              <span className="font-medium text-white">Entity Metadata</span>
-              <button className="text-gray-300 hover:text-white transition-colors">
+              <span className="font-medium text-text-primary">
+                Entity Metadata
+              </span>
+              <button className="text-text-body hover:text-text-primary transition-colors">
                 {metadataExpanded ? (
                   <ChevronUp size={16} />
                 ) : (
@@ -889,7 +893,7 @@ const ExpandableDocumentRelationships: React.FC<{
       <div className="flex justify-end items-center mb-4">
         <button
           onClick={toggleAllExpanded}
-          className="text-accent-base hover:text-accent-dark transition-colors"
+          className="text-brand-red hover:text-brand-red-dark transition-colors"
         >
           {allExpanded ? 'Collapse All' : 'Expand All'}
         </button>
@@ -931,7 +935,7 @@ const ExpandableRelationship: React.FC<{
   };
 
   return (
-    <div className="border border-gray-700 rounded-lg mb-4 bg-zinc-800/50 transition-colors">
+    <div className="border border-border rounded-lg mb-4 bg-surface-offwhite transition-colors">
       <div
         className="flex items-center justify-between p-4 cursor-pointer"
         onClick={toggleExpanded}
@@ -940,7 +944,7 @@ const ExpandableRelationship: React.FC<{
           {relationship.subject} {relationship.predicate} {relationship.object}
         </span>
         <div className="flex items-center space-x-2">
-          <button className="text-gray-300 hover:text-white transition-colors">
+          <button className="text-text-body hover:text-text-primary transition-colors">
             {localExpanded ? (
               <ChevronUp size={20} />
             ) : (
@@ -950,7 +954,7 @@ const ExpandableRelationship: React.FC<{
         </div>
       </div>
       {localExpanded && (
-        <div className="px-6 pb-4 text-gray-300 space-y-6">
+        <div className="px-6 pb-4 text-text-body space-y-6">
           <div className="grid grid-cols-2 gap-4">
             <InfoRow label="Relationship ID" value={relationship.id} />
             <InfoRow label="Relationship Weight" value={relationship.weight} />
@@ -959,22 +963,24 @@ const ExpandableRelationship: React.FC<{
           </div>
           <ExpandableInfoRow label="Chunk IDs" values={relationship.chunkIds} />
 
-          <div className="space-y-2 bg-zinc-800 p-4 rounded-lg">
+          <div className="space-y-2 bg-white p-4 rounded-lg border border-border">
             <div className="flex items-center justify-between mb-2">
-              <span className="font-medium text-white">Content:</span>
+              <span className="font-medium text-text-primary">Content:</span>
             </div>
-            <p className="pl-4 pr-2 py-2 text-gray-300 leading-relaxed">
+            <p className="pl-4 pr-2 py-2 text-text-body leading-relaxed">
               {relationship.description}
             </p>
           </div>
 
-          <div className="bg-zinc-800 rounded-lg">
+          <div className="bg-white rounded-lg border border-border">
             <div
               className="flex items-center justify-between p-4 cursor-pointer"
               onClick={toggleMetadata}
             >
-              <span className="font-medium text-white">Entity Metadata</span>
-              <button className="text-gray-300 hover:text-white transition-colors">
+              <span className="font-medium text-text-primary">
+                Entity Metadata
+              </span>
+              <button className="text-text-body hover:text-text-primary transition-colors">
                 {metadataExpanded ? (
                   <ChevronUp size={16} />
                 ) : (

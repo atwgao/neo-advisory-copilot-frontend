@@ -184,7 +184,9 @@ const Index: React.FC = () => {
             <>
               <div className="mb-6">
                 <div className="flex items-center justify-between">
-                  <h1 className="text-2xl font-bold text-white">Users</h1>
+                  <h1 className="text-2xl font-bold text-text-primary">
+                    Users
+                  </h1>
                   <Button onClick={() => setIsUserFormOpen(true)}>
                     Add New User
                   </Button>

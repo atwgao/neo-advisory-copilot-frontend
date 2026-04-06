@@ -83,7 +83,7 @@ const SourceInfo: React.FC<{
 }> = ({ isSearching, sourcesCount }) => (
   <div className="flex items-center justify-between w-full">
     <Logo width={50} height={50} disableLink={true} />
-    <span className="text-sm font-normal text-white">
+    <span className="text-sm font-normal text-text-primary">
       {isSearching ? (
         <span className="searching-animation">Searching over sources...</span>
       ) : sourcesCount !== null && sourcesCount > 0 ? (
@@ -159,7 +159,7 @@ export const Answer: FC<{
     return (
       <span
         style={{
-          color: 'white',
+          color: '#1A1A1A',
           display: 'inline-block',
           width: '1em',
           height: '1em',
@@ -177,30 +177,33 @@ export const Answer: FC<{
       <Markdown
         key={index}
         components={{
-          h1: (props) => <h1 className="white" {...props} />,
-          h2: (props) => <h2 className="white" {...props} />,
-          h3: (props) => <h3 style={{ color: 'white' }} {...props} />,
-          h4: (props) => <h4 style={{ color: 'white' }} {...props} />,
-          h5: (props) => <h5 style={{ color: 'white' }} {...props} />,
-          h6: (props) => <h6 style={{ color: 'white' }} {...props} />,
+          h1: (props) => <h1 className="text-text-primary" {...props} />,
+          h2: (props) => <h2 className="text-text-primary" {...props} />,
+          h3: (props) => <h3 style={{ color: '#1A1A1A' }} {...props} />,
+          h4: (props) => <h4 style={{ color: '#1A1A1A' }} {...props} />,
+          h5: (props) => <h5 style={{ color: '#1A1A1A' }} {...props} />,
+          h6: (props) => <h6 style={{ color: '#1A1A1A' }} {...props} />,
           strong: (props) => (
-            <strong style={{ color: 'white', fontWeight: 'bold' }} {...props} />
+            <strong
+              style={{ color: '#1A1A1A', fontWeight: 'bold' }}
+              {...props}
+            />
           ),
           p: ({ children }) => (
-            <p style={{ color: 'white', display: 'inline' }}>
+            <p style={{ color: '#1A1A1A', display: 'inline' }}>
               {children}
               {isStreaming && index === paragraphs.length - 1 && (
                 <AnimatedEllipsis />
               )}
             </p>
           ),
-          li: (props) => <li style={{ color: 'white' }} {...props} />,
+          li: (props) => <li style={{ color: '#1A1A1A' }} {...props} />,
           blockquote: (props) => (
-            <blockquote style={{ color: 'white' }} {...props} />
+            <blockquote style={{ color: '#1A1A1A' }} {...props} />
           ),
-          em: (props) => <em style={{ color: 'white' }} {...props} />,
-          code: (props) => <code style={{ color: 'white' }} {...props} />,
-          pre: (props) => <pre style={{ color: 'white' }} {...props} />,
+          em: (props) => <em style={{ color: '#1A1A1A' }} {...props} />,
+          code: (props) => <code style={{ color: '#1A1A1A' }} {...props} />,
+          pre: (props) => <pre style={{ color: '#1A1A1A' }} {...props} />,
 
           a: ({ href, ...props }) => {
             if (!href) return null;
@@ -248,41 +251,41 @@ export const Answer: FC<{
                   </PopoverTrigger>
                   <PopoverContent
                     align="start"
-                    className="max-w-screen-md flex flex-col gap-2 bg-zinc-800 shadow-transparent ring-zinc-600 border-zinc-600 ring-4 text-xs"
+                    className="max-w-screen-md flex flex-col gap-2 bg-white shadow-lg ring-border border-border ring-1 text-xs"
                   >
                     {!isKGElement && metadata?.documentid && (
-                      <div className="text-zinc-200 font-medium border-b border-zinc-600 pb-1">
+                      <div className="text-text-primary font-medium border-b border-border pb-1">
                         DocumentId: {metadata.documentid}
                       </div>
                     )}
-                    <div className="text-zinc-200 text-ellipsis overflow-hidden whitespace-nowrap font-medium">
+                    <div className="text-text-primary text-ellipsis overflow-hidden whitespace-nowrap font-medium">
                       {title ? `Title: ${title}` : ''}
                     </div>
                     <div className="flex gap-4">
                       <div className="flex-1 max-h-[200px] overflow-y-auto pr-2">
                         {isKGElement && (metadata as any).summary && (
-                          <div className="text-zinc-300 break-words mb-2">
+                          <div className="text-text-body break-words mb-2">
                             <strong>Summary:</strong>{' '}
                             {(metadata as any).summary}
                           </div>
                         )}
                         {!isKGElement && (
-                          <div className="text-zinc-300 break-words mb-2">
+                          <div className="text-text-body break-words mb-2">
                             {metadata?.snippet ?? ''}
                           </div>
                         )}
-                        <div className="text-zinc-300 break-words">
+                        <div className="text-text-body break-words">
                           {description ?? ''}
                         </div>
                         {isKGElement && (metadata as any).impact_rating && (
-                          <div className="text-zinc-300 break-words mt-2">
+                          <div className="text-text-body break-words mt-2">
                             <strong>Impact Rating:</strong>{' '}
                             {(metadata as any).impact_rating}
                           </div>
                         )}
                         {isKGElement &&
                           (metadata as any).rating_explanation && (
-                            <div className="text-zinc-300 break-words mt-2">
+                            <div className="text-text-body break-words mt-2">
                               <strong>Rating Explanation:</strong>{' '}
                               {(metadata as any).rating_explanation}
                             </div>
@@ -309,7 +312,7 @@ export const Answer: FC<{
         onValueChange={(value) => setIsOpen(value === 'answer')}
       >
         <AccordionItem value="answer">
-          <AccordionTrigger className="py-2 text-lg font-bold text-zinc-200 hover:no-underline text-white">
+          <AccordionTrigger className="py-2 text-lg font-bold text-text-primary hover:no-underline">
             <SourceInfo isSearching={isSearching} sourcesCount={sourcesCount} />
           </AccordionTrigger>
           <AccordionContent>
@@ -326,13 +329,13 @@ export const Answer: FC<{
 
       <div className="space-y-4 mt-4">
         {message.content || isStreaming ? (
-          <div className="prose prose-sm max-w-full text-zinc-300 overflow-y-auto max-h-[700px] prose-headings:text-white prose-p:text-white prose-strong:text-white prose-code:text-white p-4 rounded-lg">
+          <div className="prose prose-sm max-w-full text-text-body overflow-y-auto max-h-[700px] prose-headings:text-text-primary prose-p:text-text-body prose-strong:text-text-primary prose-code:text-text-primary p-4 rounded-lg">
             {message.content ? (
               renderContent()
             ) : (
               <div
                 style={{
-                  color: 'white',
+                  color: '#1A1A1A',
                   display: 'inline-block',
                   width: '1em',
                   height: '1em',
@@ -344,10 +347,10 @@ export const Answer: FC<{
           </div>
         ) : (
           <div className="flex flex-col gap-2">
-            <Skeleton className="max-w-lg h-4 bg-zinc-200" />
-            <Skeleton className="max-w-2xl h-4 bg-zinc-200" />
-            <Skeleton className="max-w-lg h-4 bg-zinc-200" />
-            <Skeleton className="max-w-xl h-4 bg-zinc-200" />
+            <Skeleton className="max-w-lg h-4 bg-surface-offwhite" />
+            <Skeleton className="max-w-2xl h-4 bg-surface-offwhite" />
+            <Skeleton className="max-w-lg h-4 bg-surface-offwhite" />
+            <Skeleton className="max-w-xl h-4 bg-surface-offwhite" />
           </div>
         )}
       </div>

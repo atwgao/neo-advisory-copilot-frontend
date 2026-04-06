@@ -99,7 +99,7 @@ const Sidebar: React.FC<SidebarProps> = ({
   return (
     <>
       <div
-        className={`fixed left-0 top-16 z-50 h-[calc(100%-4rem)] w-80 bg-zinc-800 transition-transform duration-300 ease-in-out overflow-hidden`}
+        className={`fixed left-0 top-16 z-50 h-[calc(100%-4rem)] w-80 bg-white border-r border-border transition-transform duration-300 ease-in-out overflow-hidden`}
         style={{
           transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
         }}
@@ -116,7 +116,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                   {conversations.map((conversation) => (
                     <div
                       key={conversation.id}
-                      className="p-2 hover:bg-zinc-700 cursor-pointer"
+                      className="p-2 hover:bg-surface-offwhite cursor-pointer"
                       onClick={() => {
                         if (onConversationSelect) {
                           onConversationSelect(conversation.id);
@@ -394,7 +394,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         </div>
       </div>
       <button
-        className={`fixed left-0 top-0 z-50 h-full w-6 bg-zinc-1000 flex items-center justify-center transition-transform duration-300 ease-in-out ${
+        className={`fixed left-0 top-0 z-50 h-full w-6 bg-brand-navy flex items-center justify-center transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-80' : 'translate-x-0'
         }`}
         onClick={onToggle}

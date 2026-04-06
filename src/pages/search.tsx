@@ -211,16 +211,16 @@ const SearchPage: React.FC = () => {
             className={`main-content ${sidebarIsOpen ? '' : 'sidebar-closed'}`}
             ref={contentAreaRef}
           >
-            <div className="sticky top-0 z-10 bg-zinc-900 shadow-md">
+            <div className="sticky top-0 z-10 bg-white shadow-md">
               <form onSubmit={handleSearch} className="py-4">
-                <div className="relative flex items-center focus-within:ring-2 focus-within:ring-accent-dark focus-within:ring-offset-2 focus-within:ring-offset-zinc-800 rounded-full">
+                <div className="relative flex items-center focus-within:ring-2 focus-within:ring-accent-dark focus-within:ring-offset-2 focus-within:ring-offset-white rounded-full">
                   <input
                     id="search-bar"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     autoFocus
                     placeholder="Enter your search query..."
-                    className="w-full px-4 py-2 h-10 bg-zinc-700 text-zinc-200 rounded-l-full focus:outline-none"
+                    className="w-full px-4 py-2 h-10 bg-surface-offwhite text-text-primary rounded-l-full border border-border focus:outline-none"
                   />
                   <Button
                     type="submit"
@@ -254,7 +254,7 @@ const SearchPage: React.FC = () => {
                       vectorSearchResults.map((result, index) => (
                         <div
                           key={index}
-                          className="mb-4 p-4 bg-zinc-800 rounded"
+                          className="mb-4 p-4 bg-white rounded border border-border"
                         >
                           <h3 className="text-lg font-semibold mb-2">
                             {result.metadata?.title || `Result ${index + 1}`}
@@ -271,7 +271,7 @@ const SearchPage: React.FC = () => {
                             <AccordionItem value={`item-${index}`}>
                               <AccordionTrigger>View Details</AccordionTrigger>
                               <AccordionContent>
-                                <pre className="text-xs overflow-auto bg-zinc-900 p-4 rounded">
+                                <pre className="text-xs overflow-auto bg-surface-offwhite p-4 rounded border border-border">
                                   {JSON.stringify(result, null, 2)}
                                 </pre>
                               </AccordionContent>
@@ -288,7 +288,7 @@ const SearchPage: React.FC = () => {
                       entitySearchResults.map((result, index) => (
                         <div
                           key={index}
-                          className="mb-4 p-4 bg-zinc-800 rounded"
+                          className="mb-4 p-4 bg-white rounded border border-border"
                         >
                           <h3 className="text-lg font-semibold mb-2">
                             {result.content.name}
@@ -305,7 +305,7 @@ const SearchPage: React.FC = () => {
                               <AccordionTrigger>View Details</AccordionTrigger>
                               <AccordionContent>
                                 <pre
-                                  className="text-xs bg-zinc-900 p-4 rounded"
+                                  className="text-xs bg-surface-offwhite p-4 rounded border border-border"
                                   style={{ whiteSpace: 'pre-wrap' }}
                                 >
                                   {JSON.stringify(result, null, 2)}
@@ -324,7 +324,7 @@ const SearchPage: React.FC = () => {
                       relationshipSearchResults.map((result, index) => (
                         <div
                           key={index}
-                          className="mb-4 p-4 bg-zinc-800 rounded"
+                          className="mb-4 p-4 bg-white rounded border border-border"
                         >
                           <h3 className="text-lg font-semibold mb-2">
                             {result.content.subject} {result.content.predicate}{' '}
@@ -339,7 +339,7 @@ const SearchPage: React.FC = () => {
                               <AccordionTrigger>View Details</AccordionTrigger>
                               <AccordionContent>
                                 <pre
-                                  className="text-xs bg-zinc-900 p-4 rounded"
+                                  className="text-xs bg-surface-offwhite p-4 rounded border border-border"
                                   style={{ whiteSpace: 'pre-wrap' }}
                                 >
                                   {JSON.stringify(result, null, 2)}
@@ -358,7 +358,7 @@ const SearchPage: React.FC = () => {
                       communitySearchResults.map((result, index) => (
                         <div
                           key={index}
-                          className="mb-4 p-4 bg-zinc-800 rounded"
+                          className="mb-4 p-4 bg-white rounded border border-border"
                         >
                           <h3 className="text-lg font-semibold mb-2">
                             {result.content.name}
@@ -375,7 +375,7 @@ const SearchPage: React.FC = () => {
                               <AccordionTrigger>View Details</AccordionTrigger>
                               <AccordionContent>
                                 <pre
-                                  className="text-xs bg-zinc-900 p-4 rounded"
+                                  className="text-xs bg-surface-offwhite p-4 rounded border border-border"
                                   style={{ whiteSpace: 'pre-wrap' }}
                                 >
                                   {JSON.stringify(result, null, 2)}

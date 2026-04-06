@@ -33,12 +33,12 @@ function ResourcePattern({
           width={72}
           height={56}
           x="50%"
-          className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/[0.02] stroke-black/5 dark:fill-gray-600/10 dark:stroke-gray-800"
+          className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-brand-navy/[0.05] stroke-brand-navy/10"
           {...gridProps}
         />
       </div>
       <motion.div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[rgb(7,7,7)] to-[rgb(16,255,3)] opacity-0 transition duration-300 group-hover:opacity-90 dark:from-accent-base dark:to-text-accent-dark"
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-brand-navy to-brand-red opacity-0 transition duration-300 group-hover:opacity-90"
         style={style}
       />
       <motion.div
@@ -49,7 +49,7 @@ function ResourcePattern({
           width={72}
           height={56}
           x="50%"
-          className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/50 stroke-black/70 dark:fill-white/2.5 dark:stroke-white/10"
+          className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-brand-navy/50 stroke-brand-navy/70"
           {...gridProps}
         />
       </motion.div>
@@ -92,7 +92,7 @@ export function ContainerObjectCard({
     <div
       onClick={handleClick}
       onMouseMove={onMouseMove}
-      className={`group relative overflow-hidden cursor-pointer rounded-2xl bg-zinc-800 transition-shadow hover:shadow-md hover:shadow-zinc-900/5 dark:bg-white/2.5 dark:hover:shadow-black/5 hover:cursor-pointer ${className}`}
+      className={`group relative overflow-hidden cursor-pointer rounded-2xl bg-brand-navy transition-shadow hover:shadow-md hover:shadow-brand-navy/20 hover:cursor-pointer ${className}`}
     >
       <div className="absolute inset-0">
         <ResourcePattern

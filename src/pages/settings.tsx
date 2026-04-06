@@ -39,8 +39,8 @@ const renderNestedConfig = (
     const valueStr =
       typeof config === 'string' ? `"${config}"` : String(config);
     return (
-      <div className="bg-zinc-700 rounded p-3 ml-6 text-gray-300">
-        <span className="text-accent-base font-normal">Value: </span>
+      <div className="bg-white rounded p-3 ml-6 text-text-body border border-border">
+        <span className="text-brand-red font-normal">Value: </span>
         <span
           className={`whitespace-pre-wrap font-normal ${getFontSize(valueStr)}`}
         >
@@ -108,10 +108,10 @@ const renderNestedConfig = (
 
           // Use compact container for special cases
           const containerClass = needsCompactLayout
-            ? 'bg-zinc-700 rounded p-3 h-fit'
+            ? 'bg-white rounded p-3 h-fit border border-border'
             : isGroupedKey
-              ? 'bg-zinc-700 rounded p-3'
-              : 'bg-zinc-700 rounded p-4';
+              ? 'bg-white rounded p-3 border border-border'
+              : 'bg-white rounded p-4 border border-border';
 
           // For extraFields, format without curly brackets
           const valueStr =
@@ -129,10 +129,10 @@ const renderNestedConfig = (
           return (
             <div key={key} className={`${containerClass} ${spanClass}`}>
               <div
-                className="text-white"
+                className="text-text-primary"
                 style={{ paddingLeft: `${depth * 16}px` }}
               >
-                <span className="text-accent-base font-normal">Key: </span>
+                <span className="text-brand-red font-normal">Key: </span>
                 <span className={`font-normal ${getFontSize(key, true)}`}>
                   {key}
                 </span>
@@ -190,27 +190,27 @@ const PromptRow: React.FC<PromptRowProps> = ({ name, template, onEdit }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="bg-zinc-700 rounded p-4 mb-4">
+    <div className="bg-white rounded p-4 border border-border mb-4">
       <div className="flex flex-col">
         <div className="flex justify-between items-center mb-2">
-          <div className="text-accent-base font-medium">{name}</div>
+          <div className="text-brand-red font-medium">{name}</div>
           <div className="flex gap-2">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="text-gray-400 hover:text-accent-base"
+              className="text-text-muted hover:text-brand-red"
             >
               {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
             </button>
             <button
               onClick={() => onEdit(name, template)}
-              className="text-gray-400 hover:text-accent-base"
+              className="text-text-muted hover:text-brand-red"
             >
               <SquarePen size={20} />
             </button>
           </div>
         </div>
         <div
-          className={`text-white mt-1 text-sm ${isExpanded ? 'whitespace-pre-wrap' : 'truncate'}`}
+          className={`text-text-body mt-1 text-sm ${isExpanded ? 'whitespace-pre-wrap' : 'truncate'}`}
         >
           {template}
         </div>
@@ -276,7 +276,7 @@ const Index: React.FC = () => {
     return alphabet.map((letter) => (
       <button
         key={letter}
-        className="px-2 py-1 text-white hover:text-accent-base"
+        className="px-2 py-1 text-text-body hover:text-brand-red"
         style={{ letterSpacing: '0.8em' }} // Adjust the spacing as needed
         onClick={() =>
           document
@@ -306,7 +306,7 @@ const Index: React.FC = () => {
 
       groupedSections[sectionKey].push(
         <div key={key} className="mb-4">
-          <h3 className="text-2xl font-bold mb-2 text-white">
+          <h3 className="text-2xl font-bold mb-2 text-text-primary">
             {key.charAt(0).toUpperCase() + key.slice(1)}
           </h3>
           {renderNestedConfig(config[key])}
@@ -319,7 +319,7 @@ const Index: React.FC = () => {
       .sort((a, b) => a.localeCompare(b))
       .map((letter) => (
         <div key={letter} id={letter} className="mb-6">
-          <h4 className="text-xl font-bold text-accent-base pb-2">{letter}</h4>
+          <h4 className="text-xl font-bold text-brand-red pb-2">{letter}</h4>
           <div>{groupedSections[letter]}</div>
         </div>
       ));
@@ -327,7 +327,7 @@ const Index: React.FC = () => {
 
   return (
     <Layout pageTitle="Settings">
-      <main className="w-full flex flex-col min-h-screen container bg-zinc-900 text-white p-4 mt-4">
+      <main className="w-full flex flex-col min-h-screen container bg-surface-offwhite text-text-primary p-4 mt-4">
         <div className="mx-auto w-full max-w-5xl mb-12 mt-4">
           <div className="mt-8">
             <div className="flex justify-between items-center mb-4">
@@ -350,17 +350,19 @@ const Index: React.FC = () => {
                 </Button>
               </div>
             </div>
-            <div className="bg-zinc-800 p-4 rounded">
+            <div className="bg-white p-4 rounded border border-border">
               {activeTab === 'config' && (
                 <>
-                  <h4 className="text-xl font-bold text-white pb-2">Config</h4>
+                  <h4 className="text-xl font-bold text-text-primary pb-2">
+                    Config
+                  </h4>
                   <div className="flex mb-4">{generateAlphabetList()}</div>
                   <div className="overflow-x-auto max-w-full">
-                    <div className="w-full bg-zinc-800">
+                    <div className="w-full bg-white">
                       {Object.keys(config).length > 0 ? (
                         renderAlphabeticalConfigSections()
                       ) : (
-                        <div className="px-4 py-2 text-white text-center">
+                        <div className="px-4 py-2 text-text-primary text-center">
                           No valid configuration data available
                         </div>
                       )}
@@ -370,9 +372,11 @@ const Index: React.FC = () => {
               )}
               {activeTab === 'prompts' && (
                 <>
-                  <h4 className="text-xl font-bold text-white pb-2">Prompts</h4>
+                  <h4 className="text-xl font-bold text-text-primary pb-2">
+                    Prompts
+                  </h4>
                   <div className="overflow-x-auto max-w-full">
-                    <div className="w-full bg-zinc-800">
+                    <div className="w-full bg-white">
                       {prompts && prompts.length > 0 ? (
                         <div className="flex flex-col">
                           {prompts.map((prompt) => (
@@ -385,7 +389,7 @@ const Index: React.FC = () => {
                           ))}
                         </div>
                       ) : (
-                        <div className="px-4 py-2 text-white text-center">
+                        <div className="px-4 py-2 text-text-primary text-center">
                           No prompts available
                         </div>
                       )}

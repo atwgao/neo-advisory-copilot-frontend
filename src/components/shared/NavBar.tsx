@@ -27,10 +27,10 @@ interface NavItemProps {
 const NavItem: React.FC<NavItemProps> = ({ href, children, isActive }) => (
   <Link
     href={href}
-    className={`px-2 py-1 text-sm font-medium ${
+    className={`rounded-full px-4 py-1.5 text-sm transition-colors ${
       isActive
-        ? 'text-brand-red font-semibold'
-        : 'text-white/70 hover:text-white'
+        ? 'bg-brand-red text-white font-medium'
+        : 'border border-white/30 text-white hover:bg-white/10'
     }`}
   >
     {children}
@@ -156,7 +156,7 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
                 className="flex-shrink-0 flex items-center"
               >
                 <Logo className="h-12 w-auto" disableLink={true} />
-                <span className="ml-2 text-xl font-bold text-white">
+                <span className="ml-2 text-sm font-light tracking-widest uppercase text-white">
                   {brandingConfig.navbar.appName}
                 </span>
               </Link>

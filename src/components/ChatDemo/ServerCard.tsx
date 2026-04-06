@@ -76,7 +76,7 @@ const R2RServerCard: React.FC<R2RServerCardProps> = ({
         </div>
         <div className="flex items-center gap-2 pt-2 text-sm">
           <Link width="16" height="16" />
-          <span className="text-gray-500 dark:text-gray-400 truncate">
+          <span className="text-text-muted truncate">
             {pipeline?.deploymentUrl}
           </span>
           {copied ? (

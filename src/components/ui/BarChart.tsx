@@ -20,7 +20,7 @@ const fullConfig = resolveConfig(tailwindConfig);
 
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-const textColor = fullConfig.theme.colors.gray[300];
+const textColor = fullConfig.theme.colors.gray[700];
 
 const defaultColors = [
   fullConfig.theme.colors.blue[500],
@@ -156,7 +156,7 @@ const BarChart: React.FC<BarChartProps> = ({ data, selectedFilter }) => {
     <div className="relative">
       <Bar data={chartData} options={chartOptions} />
       {filteredLogs.length === 0 && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 text-white">
+        <div className="absolute inset-0 flex items-center justify-center bg-white bg-opacity-80 text-text-body">
           No data available
         </div>
       )}

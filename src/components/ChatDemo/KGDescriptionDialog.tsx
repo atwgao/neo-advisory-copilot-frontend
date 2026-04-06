@@ -21,9 +21,9 @@ const InfoRow: React.FC<{
   value?: any;
   values?: { label?: string; value: any }[];
 }> = ({ label, value, values }) => (
-  <div className="flex items-center justify-between py-2 border-b border-gray-700/50">
-    <span className="font-medium text-gray-200">{label}:</span>
-    <span className="text-gray-300 flex items-center space-x-4">
+  <div className="flex items-center justify-between py-2 border-b border-border">
+    <span className="font-medium text-text-primary">{label}:</span>
+    <span className="text-text-body flex items-center space-x-4">
       {value !== undefined
         ? typeof value === 'object'
           ? JSON.stringify(value)
@@ -32,7 +32,7 @@ const InfoRow: React.FC<{
           ? values.map((item, index) => (
               <span key={index} className="flex items-center">
                 {item.label && (
-                  <span className="mr-1 text-gray-400">{item.label}:</span>
+                  <span className="mr-1 text-text-muted">{item.label}:</span>
                 )}
                 <span>{String(item.value) || 'N/A'}</span>
               </span>
@@ -49,19 +49,19 @@ const ExpandableInfoRow: React.FC<{
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="py-2 border-b border-gray-700">
+    <div className="py-2 border-b border-border">
       <div className="flex items-center justify-between">
         <span className="font-medium">{label}:</span>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="text-gray-300 flex items-center space-x-2"
+          className="text-text-body flex items-center space-x-2"
         >
           <span>{values?.length ?? 0} items</span>
           {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
       </div>
       {isExpanded && values && values.length > 0 && (
-        <div className="mt-2 pl-4 text-gray-300">
+        <div className="mt-2 pl-4 text-text-body">
           {values.map((value, index) => (
             <div key={index}>{String(value)}</div>
           ))}
@@ -78,22 +78,22 @@ const AttributesSection: React.FC<{
 
   if (!attributes || Object.keys(attributes).length === 0) {
     return (
-      <div className="py-2 border-b border-gray-700">
+      <div className="py-2 border-b border-border">
         <div className="flex items-center justify-between">
           <span className="font-medium">Attributes:</span>
-          <span className="text-gray-300">None</span>
+          <span className="text-text-body">None</span>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="py-2 border-b border-gray-700">
+    <div className="py-2 border-b border-border">
       <div className="flex items-center justify-between">
         <span className="font-medium">Attributes:</span>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="text-gray-300 flex items-center space-x-2"
+          className="text-text-body flex items-center space-x-2"
         >
           <span>{Object.keys(attributes).length} fields</span>
           {isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -101,7 +101,7 @@ const AttributesSection: React.FC<{
       </div>
       {isExpanded && (
         <div className="mt-2">
-          <pre className="bg-zinc-900 p-3 rounded-md text-sm overflow-x-auto">
+          <pre className="bg-surface-offwhite p-3 rounded-md border border-border text-sm overflow-x-auto">
             {JSON.stringify(attributes, null, 2)}
           </pre>
         </div>
@@ -145,15 +145,17 @@ const KGDescriptionDialog: React.FC<KGDescriptionDialogProps> = ({
       <InfoRow label="Collection ID" value={community.collection_id} />
       <InfoRow label="Level" value={community.level} />
       <InfoRow label="Name" value={community.name} />
-      <div className="py-2 border-b border-gray-700">
+      <div className="py-2 border-b border-border">
         <div className="font-medium mb-2">Summary:</div>
-        <p className="text-gray-300 whitespace-pre-wrap">{community.summary}</p>
+        <p className="text-text-body whitespace-pre-wrap">
+          {community.summary}
+        </p>
       </div>
       <ExpandableInfoRow label="Findings" values={community.findings} />
       <InfoRow label="Rating" value={community.rating} />
-      <div className="py-2 border-b border-gray-700">
+      <div className="py-2 border-b border-border">
         <div className="font-medium mb-2">Rating Explanation:</div>
-        <p className="text-gray-300 whitespace-pre-wrap">
+        <p className="text-text-body whitespace-pre-wrap">
           {community.rating_explanation}
         </p>
       </div>
@@ -179,8 +181,8 @@ const KGDescriptionDialog: React.FC<KGDescriptionDialogProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="text-white max-w-4xl">
-        <div className="mt-4 space-y-2 h-[calc(90vh-120px)] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-300 -mr-4">
+      <DialogContent className="text-text-primary max-w-4xl">
+        <div className="mt-4 space-y-2 h-[calc(90vh-120px)] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 -mr-4">
           <DialogHeader>
             <DialogTitle className="text-xl font-bold mb-2">
               {type.charAt(0).toUpperCase() + type.slice(1)} Details
