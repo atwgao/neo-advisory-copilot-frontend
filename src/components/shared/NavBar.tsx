@@ -29,8 +29,8 @@ const NavItem: React.FC<NavItemProps> = ({ href, children, isActive }) => (
     href={href}
     className={`rounded-full px-4 py-1.5 text-sm transition-colors ${
       isActive
-        ? 'bg-brand-red text-white font-medium'
-        : 'border border-white/30 text-white hover:bg-white/10'
+        ? 'bg-brand-navy text-white font-medium'
+        : 'text-text-muted hover:text-brand-navy-light hover:bg-blue-50'
     }`}
   >
     {children}
@@ -147,9 +147,9 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
     };
 
     return (
-      <nav ref={ref} className="bg-brand-navy shadow z-50 w-full">
-        <div className="w-full px-4 sm:px-6 lg:px-8">
-          {/* Centered logo row */}
+      <nav ref={ref} className="shadow z-50 w-full">
+        {/* Logo row: navy with reduced opacity */}
+        <div className="bg-brand-navy/90 w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center items-center h-16">
             <Link
               href={isSuperUser() ? '/' : '/documents'}
@@ -158,14 +158,16 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
               <Logo className="h-16 w-auto" disableLink={true} />
             </Link>
           </div>
-          {/* Nav row: text label + pills left, avatar right */}
+        </div>
+        {/* Menu row: white background */}
+        <div className="bg-white border-b border-border w-full px-4 sm:px-6 lg:px-8">
           {isSignedIn && (
-            <div className="flex items-center justify-between pb-2">
+            <div className="flex items-center justify-between py-2">
               <div className="flex items-center space-x-3">
-                <span className="text-xs font-light tracking-widest uppercase text-white/70 mr-1">
+                <span className="text-xs font-light tracking-widest uppercase text-text-muted mr-1">
                   {brandingConfig.navbar.appName}
                 </span>
-                <span className="text-white/30">|</span>
+                <span className="text-border">|</span>
                 <NavItems
                   isAuthenticated={isAuthenticated}
                   role={role}
