@@ -43,7 +43,14 @@ const HomePage = () => {
   return (
     <Layout includeFooter>
       <main className="w-full flex flex-col container h-screen-[calc(100%-4rem)]">
-        <div className="relative bg-white p-5">
+        <div className="relative bg-white p-5 mt-12">
+          <div className="flex justify-center mb-4">
+            <img
+              src="/images/momentum-mark.svg"
+              className="h-12 w-12 mx-auto mb-4 opacity-60"
+              alt="Momentum"
+            />
+          </div>
           <div className="flex flex-col lg:flex-row gap-4">
             {/* Left column - Alert */}
             <div className="w-full lg:w-2/3 flex flex-col gap-4">

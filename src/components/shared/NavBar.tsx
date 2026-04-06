@@ -69,6 +69,7 @@ const NavItems: React.FC<NavItemsProps> = ({
       label: 'Search',
       show: brandingConfig.navbar.menuItems.search,
     },
+    { path: '/customer-insights', label: 'Customer Insights', show: true },
   ];
 
   const adminItems = [
