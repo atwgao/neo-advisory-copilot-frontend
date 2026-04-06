@@ -1,4 +1,5 @@
 import * as d3 from 'd3';
+import { Maximize2, Minimize2 } from 'lucide-react';
 import { EntityResponse, RelationshipResponse } from 'r2r-js';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -41,6 +42,7 @@ const KnowledgeGraphD3: React.FC<KnowledgeGraphProps> = ({
   const tooltipRef = useRef<HTMLDivElement>(null);
   const [nodeCount, setNodeCount] = useState(0);
   const [linkCount, setLinkCount] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const [originalCounts, setOriginalCounts] = useState({
     entities: 0,
     relationships: 0,
@@ -280,7 +282,7 @@ const KnowledgeGraphD3: React.FC<KnowledgeGraphProps> = ({
         .attr('stroke-width', 0.8)
         .on('mouseover', function (event, d) {
           d3.select(this)
-            .attr('stroke', '#fff')
+            .attr('stroke', '#333')
             .attr('stroke-width', 2)
             .attr('stroke-opacity', 1);
 
@@ -338,13 +340,13 @@ const KnowledgeGraphD3: React.FC<KnowledgeGraphProps> = ({
         .join('circle')
         .attr('r', (d) => nodeSize(d.connections))
         .attr('fill', (d) => categoryColorScale(d.category) as string)
-        .attr('stroke', '#fff')
+        .attr('stroke', '#e0e0e0')
         .attr('stroke-width', 1.5)
         .attr('stroke-opacity', 0.8)
         .on('mouseover', function (event, d) {
           // Highlight the node
           d3.select(this)
-            .attr('stroke', '#fff')
+            .attr('stroke', '#333')
             .attr('stroke-width', 3)
             .attr('stroke-opacity', 1);
 
@@ -355,7 +357,7 @@ const KnowledgeGraphD3: React.FC<KnowledgeGraphProps> = ({
                 typeof l.source === 'object' ? l.source.id : l.source;
               const target =
                 typeof l.target === 'object' ? l.target.id : l.target;
-              return source === d.id || target === d.id ? '#fff' : '#aaa';
+              return source === d.id || target === d.id ? '#333' : '#ccc';
             })
             .attr('stroke-opacity', (l): number => {
               const source =
@@ -414,7 +416,7 @@ const KnowledgeGraphD3: React.FC<KnowledgeGraphProps> = ({
         .on('mouseout', function () {
           // Reset node appearance
           d3.select(this)
-            .attr('stroke', '#fff')
+            .attr('stroke', '#e0e0e0')
             .attr('stroke-width', 1.5)
             .attr('stroke-opacity', 0.8);
 
@@ -442,9 +444,9 @@ const KnowledgeGraphD3: React.FC<KnowledgeGraphProps> = ({
       const labelThreshold = Math.max(
         d3.quantile(
           nodes.map((d) => d.connections),
-          0.85
-        ) || 3,
-        nodes.length > 100 ? 5 : 2
+          0.5
+        ) || 1,
+        nodes.length > 100 ? 3 : 1
       );
 
       const label = svg
@@ -458,8 +460,8 @@ const KnowledgeGraphD3: React.FC<KnowledgeGraphProps> = ({
         .attr('font-weight', 500)
         .attr('dx', (d) => nodeSize(d.connections) + 5) // Ensure this returns a number
         .attr('dy', 4)
-        .attr('fill', '#fff')
-        .attr('stroke', 'rgba(0, 0, 0, 0.75)')
+        .attr('fill', '#1a1a1a')
+        .attr('stroke', 'rgba(255, 255, 255, 0.85)')
         .attr('stroke-width', 3)
         .attr('stroke-linejoin', 'round')
         .attr('paint-order', 'stroke')
@@ -574,8 +576,23 @@ const KnowledgeGraphD3: React.FC<KnowledgeGraphProps> = ({
   }, [entities, relationships, width, height, maxNodes]);
 
   return (
-    <div className="relative w-full h-full">
-      <svg ref={svgRef} className="w-full h-full bg-surface-pale" />
+    <div
+      className={`relative overflow-hidden ${
+        isFullscreen ? 'fixed inset-0 z-50 bg-white' : 'w-full h-full bg-white'
+      }`}
+    >
+      <button
+        onClick={() => setIsFullscreen(!isFullscreen)}
+        className="absolute top-2 right-2 z-10 p-2 bg-white rounded-md shadow-md hover:bg-gray-100 transition-colors"
+        title={isFullscreen ? 'Exit fullscreen' : 'Fullscreen'}
+      >
+        {isFullscreen ? (
+          <Minimize2 className="w-5 h-5 text-text-primary" />
+        ) : (
+          <Maximize2 className="w-5 h-5 text-text-primary" />
+        )}
+      </button>
+      <svg ref={svgRef} className="w-full h-full" />
       <div
         ref={tooltipRef}
         className="absolute top-0 left-0 pointer-events-none"

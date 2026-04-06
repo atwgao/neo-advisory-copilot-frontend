@@ -70,7 +70,7 @@ const DownloadButtonContainer: React.FC<DownloadFileContainerProps> = ({
       <Button
         onClick={handleDocumentDownload}
         disabled={isDownloading}
-        color={isDownloading ? 'disabled' : 'text_gray'}
+        color={isDownloading ? 'disabled' : 'transparent'}
         shape="slim"
         tooltip="Download Document"
       >

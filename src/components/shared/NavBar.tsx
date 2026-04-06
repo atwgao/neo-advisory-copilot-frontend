@@ -1,3 +1,4 @@
+import { UserRound } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/router';
@@ -189,10 +190,9 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
                 )}
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Avatar className="cursor-pointer">
-                      <AvatarImage src="/images/default_profile.svg" />
-                      <AvatarFallback></AvatarFallback>
-                    </Avatar>
+                    <button className="cursor-pointer p-1.5 rounded-full hover:bg-gray-100 transition-colors">
+                      <UserRound className="h-5 w-5 text-text-muted" />
+                    </button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent>
                     <DropdownMenuItem

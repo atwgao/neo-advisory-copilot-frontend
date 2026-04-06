@@ -147,10 +147,10 @@ const CollectionDialog: React.FC<CollectionDialogProps> = ({
   return (
     <>
       <Dialog open={open} onOpenChange={onClose}>
-        <DialogContent className="text-white max-w-4xl border border-gray-800">
-          <div className="mt-4 space-y-4 h-[calc(90vh-120px)] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-300 -mr-4">
+        <DialogContent className="text-text-primary max-w-4xl border border-gray-300">
+          <div className="mt-4 space-y-4 h-[calc(90vh-120px)] overflow-y-auto pr-4 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 -mr-4">
             <DialogHeader>
-              <DialogTitle className="text-2xl font-bold mb-4 text-gray-100">
+              <DialogTitle className="text-2xl font-bold mb-4 text-text-primary">
                 Collection Overview
               </DialogTitle>
             </DialogHeader>
@@ -295,15 +295,15 @@ const InfoRow: React.FC<{
 
   return (
     <div
-      className={`py-3 border-b border-gray-700/50 ${
+      className={`py-3 border-b border-gray-200 ${
         isLongContent
           ? 'flex flex-col space-y-2'
           : 'flex items-center justify-between'
       }`}
     >
-      <span className="font-medium text-gray-200">{label}</span>
+      <span className="font-medium text-text-primary">{label}</span>
       <div
-        className={`text-text-muted ${
+        className={`text-text-primary ${
           isLongContent ? 'mt-2' : 'flex items-center space-x-4'
         }`}
       >
@@ -315,7 +315,7 @@ const InfoRow: React.FC<{
           values.map((item, index) => (
             <span key={index} className="flex items-center">
               {item.label && (
-                <span className="mr-2 text-text-body">{item.label}:</span>
+                <span className="mr-2 text-text-primary">{item.label}:</span>
               )}
               <span>{formatValue(item.value)}</span>
             </span>

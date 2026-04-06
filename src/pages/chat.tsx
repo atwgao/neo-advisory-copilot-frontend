@@ -225,7 +225,7 @@ const Index: React.FC = () => {
 
   return (
     <Layout pageTitle="Chat" includeFooter={false}>
-      <div className="flex flex-col h-screen-[calc(100%-4rem)] overflow-hidden">
+      <div className="flex flex-col h-full overflow-hidden">
         <Sidebar
           isOpen={sidebarIsOpen}
           onToggle={toggleSidebar}
@@ -309,7 +309,7 @@ const Index: React.FC = () => {
             </div>
             <div className="w-full max-w-4xl flex flex-col flex-grow overflow-hidden">
               {/* Chat Interface */}
-              <div className="flex-1 overflow-auto p-4 mt-16">
+              <div className="flex-1 overflow-y-auto p-4 mt-16">
                 <Result
                   query={query}
                   setQuery={setQuery}
