@@ -1,46 +1,53 @@
-import { Lightbulb, FlaskConical, Flame, Earth } from 'lucide-react';
+import { TrendingUp, Shield, Users, Briefcase } from 'lucide-react';
 import { FC } from 'react';
 
-import { Logo } from '@/components/shared/Logo';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { DefaultQueriesProps } from '@/types';
 
 export const DefaultQueries: FC<DefaultQueriesProps> = ({ setQuery, mode }) => {
   const defaultRagQueries = [
     {
-      query: 'What is the main topic of the uploaded documents?',
-      icon: <Lightbulb className="h-6 w-6 text-yellow-400" />,
+      query:
+        'Explain how Linked Investment Service Provider (LISP) funds work and their benefits for clients.',
+      icon: <TrendingUp className="h-6 w-6 text-brand-navy" />,
     },
     {
-      query: 'Summarize key points for me.',
-      icon: <FlaskConical className="h-6 w-6 text-purple-400" />,
+      query:
+        'What are the key differences between a living annuity and a life annuity for retirement planning?',
+      icon: <Briefcase className="h-6 w-6 text-brand-navy" />,
     },
     {
-      query: 'What issues do you see with the documents?',
-      icon: <Flame className="h-6 w-6 text-red-400" />,
+      query:
+        'Summarise the FAIS Act requirements for providing financial advice on investment products.',
+      icon: <Shield className="h-6 w-6 text-brand-navy" />,
     },
     {
-      query: 'How are these documents interrelated?',
-      icon: <Earth className="h-6 w-6 text-green-400" />,
+      query:
+        'What factors should I consider when recommending a risk profile for a new client?',
+      icon: <Users className="h-6 w-6 text-brand-navy" />,
     },
   ];
 
   const defaultAgentQueries = [
     {
-      query: 'Hey! How are you today?',
-      icon: <Lightbulb className="h-6 w-6 text-yellow-400" />,
+      query:
+        'Help me prepare talking points for a client review meeting about their investment portfolio.',
+      icon: <Briefcase className="h-6 w-6 text-brand-navy" />,
     },
     {
-      query: 'Can you help me understand my documents better?',
-      icon: <FlaskConical className="h-6 w-6 text-purple-400" />,
+      query:
+        'What compliance checks should I perform before recommending a fund switch?',
+      icon: <Shield className="h-6 w-6 text-brand-navy" />,
     },
     {
-      query: 'How might agentic RAG help me in the long run?',
-      icon: <Flame className="h-6 w-6 text-red-400" />,
+      query:
+        'Analyse the suitability of balanced funds for a conservative client nearing retirement.',
+      icon: <TrendingUp className="h-6 w-6 text-brand-navy" />,
     },
     {
-      query: 'What is the coolest thing you can do?',
-      icon: <Earth className="h-6 w-6 text-green-400" />,
+      query:
+        'What are the tax implications of withdrawing from a retirement annuity before age 55?',
+      icon: <Users className="h-6 w-6 text-brand-navy" />,
     },
   ];
 
@@ -57,17 +64,24 @@ export const DefaultQueries: FC<DefaultQueriesProps> = ({ setQuery, mode }) => {
   const defaultQueries = getQueriesBasedOnMode(mode);
 
   return (
-    <div className="flex flex-col items-center justify-center h-full space-y-8">
-      <Logo width={150} height={150} disableLink={true} />
+    <div className="flex flex-col items-center justify-center h-full space-y-8 mt-24">
+      <img
+        src="/images/momentum-mark.svg"
+        className="h-16 w-16 opacity-50"
+        alt="Momentum"
+      />
+      <p className="text-sm text-text-muted font-light tracking-wide">
+        How can I help you today?
+      </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-4xl px-4">
         {defaultQueries.map(({ query, icon }, index) => (
           <Alert
             key={index}
-            className="cursor-pointer hover:bg-surface-offwhite flex flex-col items-start p-3 h-[100px]"
+            className="cursor-pointer bg-gray-50/60 hover:bg-gray-100/80 border-gray-200/50 flex flex-col items-start p-3 h-[100px] transition-colors"
             onClick={() => setQuery(query)}
           >
             <div className="mb-2">{icon}</div>
-            <AlertDescription className="text-sm text-left">
+            <AlertDescription className="text-sm text-left text-text-body">
               {query}
             </AlertDescription>
           </Alert>
