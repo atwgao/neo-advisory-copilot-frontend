@@ -18,7 +18,7 @@ const Layout: React.FC<Props> = ({
   includeFooter = true,
 }) => {
   return (
-    <div className="flex flex-col min-h-screen bg-zinc-900">
+    <div className="flex flex-col min-h-screen bg-white">
       <Head>
         <title>
           {pageTitle

@@ -28,7 +28,7 @@ const NavItem: React.FC<NavItemProps> = ({ href, children, isActive }) => (
   <Link
     href={href}
     className={`px-2 py-1 text-sm font-medium ${
-      isActive ? 'text-accent-base' : 'text-zinc-400 hover:text-white'
+      isActive ? 'text-brand-red font-semibold' : 'text-white/70 hover:text-white'
     }`}
   >
     {children}
@@ -145,7 +145,7 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
     };
 
     return (
-      <nav ref={ref} className="bg-zinc-900 shadow z-50 w-full">
+      <nav ref={ref} className="bg-brand-navy shadow z-50 w-full">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-14 items-center">
             <div className="flex items-center space-x-4">
@@ -160,7 +160,7 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
               </Link>
               {isSignedIn && (
                 <>
-                  <span className="text-zinc-400">|</span>
+                  <span className="text-white/40">|</span>
                   <NavItems
                     isAuthenticated={isAuthenticated}
                     role={role}

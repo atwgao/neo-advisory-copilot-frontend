@@ -27,7 +27,11 @@ const brandingOverride = {
     },
   },
   logo: {
-    src: '/images/momentum-logo.svg',
+    src: '/images/momentum-wordmark-white.svg',
+    alt: 'Momentum',
+  },
+  loginLogo: {
+    src: '/images/momentum-mark.svg',
     alt: 'Momentum',
   },
   theme: 'light',
