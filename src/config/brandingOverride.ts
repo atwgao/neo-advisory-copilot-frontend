@@ -1,40 +1,41 @@
 // src/config/brandingOverride.ts
 
-// This file allows overriding branding configurations.
-// If no override is provided, defaults from `brandingConfig.ts` will be used.
+// Momentum Group branding overrides for Neo-Advisory Copilot Dashboard.
+// These values are merged into the defaults from brandingConfig.ts.
 
 const brandingOverride = {
-  // Example overrides:
-  // companyName: 'Example Company Name',
-  // deploymentName: 'RAG Server 5',
-  // navbar: {
-  // appName: 'MyApp',
-  // showDocsButton: false,
-  //  menuItems: {
-  //    home: true,
-  //    documents: true,
-  //    collections: true,
-  //    chat: true,
-  //    search: true,
-  //    users: true,
-  //    logs: true,
-  //    analytics: true,
-  //    settings: true,
-  //  },
-  //},
-  //logo: {
-  //  src: 'https://example.com/logo.png',
-  //  alt: 'https://example.com/logo.png',
-  //},
-  //theme: 'light',
-  //homePage: {
-  //  pythonSdk: false,
-  //  githubCard: false,
-  //  hatchetCard: false,
-  //},
-  //nextConfig: {
-  //  additionalRemoteDomain: 'cleverthis.com',
-  //},
+  companyName: 'Momentum Group Limited',
+  deploymentName: 'Neo-Advisory Copilot',
+  socialLinks: {
+    twitter: { enabled: false, url: '' },
+    github: { enabled: false, url: '' },
+    discord: { enabled: false, url: '' },
+  },
+  navbar: {
+    appName: 'Neo-Advisory Copilot',
+    showDocsButton: false,
+    menuItems: {
+      home: true,
+      documents: true,
+      collections: true,
+      chat: true,
+      search: true,
+      users: true,
+      logs: true,
+      analytics: false,
+      settings: true,
+    },
+  },
+  logo: {
+    src: '/images/momentum-logo.svg',
+    alt: 'Momentum',
+  },
+  theme: 'light',
+  homePage: {
+    pythonSdk: false,
+    githubCard: false,
+    hatchetCard: false,
+  },
 };
 
 // Export the override object
