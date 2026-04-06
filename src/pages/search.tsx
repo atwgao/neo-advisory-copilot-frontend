@@ -211,16 +211,16 @@ const SearchPage: React.FC = () => {
             className={`main-content ${sidebarIsOpen ? '' : 'sidebar-closed'}`}
             ref={contentAreaRef}
           >
-            <div className="bg-white shadow-md pt-10 mt-8">
+            <div className="pt-10 mt-8">
               <form onSubmit={handleSearch} className="py-4">
-                <div className="relative flex items-center focus-within:ring-2 focus-within:ring-accent-dark focus-within:ring-offset-2 focus-within:ring-offset-white rounded-full">
+                <div className="relative flex items-center rounded-full border border-border hover:border-brand-navy/30 transition-colors">
                   <input
                     id="search-bar"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     autoFocus
                     placeholder="Enter your search query..."
-                    className="w-full px-4 py-2 h-10 bg-white text-text-primary rounded-l-full border border-border focus:outline-none"
+                    className="w-full px-4 py-2 h-10 bg-white text-text-primary rounded-l-full border-none focus:outline-none focus:ring-0"
                   />
                   <Button
                     type="submit"
