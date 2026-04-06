@@ -63,7 +63,7 @@
 
     --border: #e6e4e4;
     --input: #e6e4e4;
-    --ring: #3d3935;
+    --ring: transparent;
 
     --radius: 0.5rem;
   }
