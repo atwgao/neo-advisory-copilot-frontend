@@ -73,11 +73,11 @@ export const DefaultQueries: FC<DefaultQueriesProps> = ({ setQuery, mode }) => {
       <p className="text-2xl text-text-muted font-light tracking-wide">
         How can I help you today?
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-4xl px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-4xl px-4">
         {defaultQueries.map(({ query, icon }, index) => (
           <Alert
             key={index}
-            className="cursor-pointer bg-gray-50/60 hover:bg-gray-200/80 border-gray-200/50 flex flex-col items-start p-3 min-h-[80px] h-auto transition-colors"
+            className="cursor-pointer bg-gray-50/60 hover:bg-gray-200/80 border-gray-200/50 flex flex-col items-start p-4 min-h-[120px] h-auto transition-colors"
             onClick={() => setQuery(query)}
           >
             <div className="mb-2">{icon}</div>
