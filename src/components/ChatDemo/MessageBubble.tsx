@@ -9,7 +9,7 @@ const MessageBubble: React.FC<{ message: Message; isStreaming?: boolean }> = ({
   if (message.role === 'user') {
     return (
       <div className="flex justify-end mb-4">
-        <div className="bg-zinc-800 text-white rounded-lg p-3 max-w-xs lg:max-w-md">
+        <div className="bg-brand-navy text-white rounded-lg p-3 max-w-xs lg:max-w-md">
           <p>{message.content}</p>
         </div>
       </div>
@@ -18,7 +18,7 @@ const MessageBubble: React.FC<{ message: Message; isStreaming?: boolean }> = ({
     return (
       <div className="flex justify-start mb-4">
         <div
-          className={`bg-gray-200 rounded-lg p-3 max-w-xs lg:max-w-md ${message.isStreaming ? 'animate-pulse' : ''}`}
+          className={`bg-surface-offwhite text-text-body border border-border-light rounded-lg p-3 max-w-xs lg:max-w-md ${message.isStreaming ? 'animate-pulse' : ''}`}
         >
           <p>
             {message.content}

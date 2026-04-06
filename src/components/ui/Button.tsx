@@ -11,35 +11,37 @@ import {
 
 const colorStyles = {
   primary:
-    'bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-accent-darker dark:text-accent-contrast dark:ring-1 dark:ring-inset dark:ring-accent-dark dark:hover:bg-accent-dark dark:hover:text-accent-contrast dark:hover:ring-accent-base',
+    'bg-brand-red text-white hover:bg-brand-red-dark',
   secondary:
-    'text-zinc-900 hover:bg-zinc-200 dark:bg-zinc-800/40 dark:text-zinc-400 dark:ring-1 dark:ring-inset dark:ring-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-300',
+    'bg-brand-navy text-white hover:bg-brand-navy-light',
   filled:
-    'bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-accent-darker dark:text-white dark:hover:bg-accent-dark',
+    'bg-brand-red text-white hover:bg-brand-red-dark',
   danger:
-    'bg-red-600 text-white hover:bg-red-500 dark:bg-red-600 dark:text-white dark:hover:bg-red-500',
+    'bg-brand-red-dark text-white hover:bg-brand-red',
   amber:
-    'bg-amber-500 text-white hover:bg-amber-600 dark:bg-amber-500 dark:text-white dark:hover:bg-amber-600',
-  blue: 'bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-blue-600/10 dark:text-blue-600 dark:ring-1 dark:ring-inset dark:ring-blue-600/20 dark:hover:bg-blue-600/10 dark:hover:text-blue-300',
+    'bg-amber-500 text-white hover:bg-amber-600',
+  blue:
+    'bg-brand-blue-accent/10 text-brand-navy ring-1 ring-inset ring-brand-blue-accent/20 hover:bg-brand-blue-accent/20',
   blue_filled:
-    'bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-blue-600 dark:text-white dark:hover:bg-opacity-90',
-  text: 'text-accent-base hover:text-accent-dark dark:text-accent-base dark:hover:text-accent-dark',
+    'bg-brand-blue-accent text-brand-navy hover:opacity-90',
+  text:
+    'text-brand-red hover:text-brand-red-dark',
   text_gray:
-    'text-gray-200 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-500',
-  disabled: 'bg-zinc-600 text-white cursor-not-allowed hover:bg-zinc-500',
-  light: 'bg-zinc-700 text-white hover:bg-zinc-600',
+    'text-text-muted hover:text-text-primary',
+  disabled:
+    'bg-gray-300 text-gray-500 cursor-not-allowed',
+  light:
+    'bg-surface-pale text-text-primary hover:bg-surface-offwhite',
   transparent:
-    'bg-transparent text-zinc-900 hover:bg-zinc-200 dark:text-zinc-400 dark:hover:bg-zinc-800',
+    'bg-transparent text-text-primary hover:bg-surface-offwhite',
 };
 
 const shapeStyles = {
-  default: 'rounded-md px-1 py-1',
-  rounded: 'rounded-full px-1 py-1',
-  outline:
-    'px-1 py-1 ring-1 ring-inset ring-zinc-900/10 dark:ring-white/10 rounded-md',
-  outline_wide:
-    'px-2 py-1 ring-1 ring-inset ring-zinc-900/10 dark:ring-white/10 rounded-md',
-  slim: 'rounded-md px-0.5 py-0.5 h-9 flex items-center justify-center',
+  default: 'rounded-button px-3 py-1.5',
+  rounded: 'rounded-full px-3 py-1.5',
+  outline: 'px-3 py-1.5 ring-1 ring-inset ring-border rounded-button',
+  outline_wide: 'px-4 py-1.5 ring-1 ring-inset ring-border rounded-button',
+  slim: 'rounded-button px-2 py-1 h-9 flex items-center justify-center',
 };
 
 type ButtonBaseProps = {
