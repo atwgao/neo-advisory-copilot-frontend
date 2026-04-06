@@ -147,43 +147,42 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
     };
 
     return (
-      <nav ref={ref} className="bg-brand-navy shadow z-50 w-full relative">
+      <nav ref={ref} className="bg-brand-navy shadow z-50 w-full">
         <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center w-full">
-            <div className="flex justify-center items-center h-14 w-full">
-              <Link
-                href={isSuperUser() ? '/' : '/documents'}
-                className="flex items-center"
-              >
-                <Logo className="h-12 w-auto" disableLink={true} />
-                <span className="ml-2 text-sm font-light tracking-widest uppercase text-white">
-                  {brandingConfig.navbar.appName}
-                </span>
-              </Link>
-            </div>
-            {isSignedIn && (
-              <div className="flex items-center justify-center space-x-2 pb-2">
+          {/* Row 1: Centered logo + text */}
+          <div className="flex justify-center items-center h-14">
+            <Link
+              href={isSuperUser() ? '/' : '/documents'}
+              className="flex items-center"
+            >
+              <Logo className="h-12 w-auto" disableLink={true} />
+              <span className="ml-2 text-sm font-light tracking-widest uppercase text-white">
+                {brandingConfig.navbar.appName}
+              </span>
+            </Link>
+          </div>
+          {/* Row 2: Left nav pills + right avatar */}
+          {isSignedIn && (
+            <div className="flex items-center justify-between pb-2">
+              <div className="flex items-center space-x-2">
                 <NavItems
                   isAuthenticated={isAuthenticated}
                   role={role}
                   pathname={pathname}
                 />
               </div>
-            )}
-            <div className="absolute right-4 top-3 flex items-center space-x-4">
-              {brandingConfig.navbar.showDocsButton && (
-                <Button
-                  color="primary"
-                  shape="outline_wide"
-                  onClick={() =>
-                    window.open('https://r2r-docs.sciphi.ai', '_blank')
-                  }
-                >
-                  Docs
-                </Button>
-              )}
-
-              {isSignedIn && (
+              <div className="flex items-center space-x-4">
+                {brandingConfig.navbar.showDocsButton && (
+                  <Button
+                    color="primary"
+                    shape="outline_wide"
+                    onClick={() =>
+                      window.open('https://r2r-docs.sciphi.ai', '_blank')
+                    }
+                  >
+                    Docs
+                  </Button>
+                )}
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
                     <Avatar className="cursor-pointer">
@@ -207,9 +206,9 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-              )}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </nav>
     );
