@@ -200,7 +200,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <Layout includeFooter={false}>
-      <div className="flex flex-col items-center justify-center min-h-screen p-8 gap-16 bg-surface-offwhite">
+      <div className="flex flex-col items-center justify-center min-h-screen p-8 gap-16 bg-white">
         <div className="bg-white shadow-card rounded-card px-8 pt-6 pb-8 mb-4 w-full max-w-md flex flex-col">
           <div className="flex-grow">
             <div className="flex justify-center mb-6">

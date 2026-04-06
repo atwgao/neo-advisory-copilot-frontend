@@ -220,7 +220,7 @@ const SearchPage: React.FC = () => {
                     onChange={(e) => setQuery(e.target.value)}
                     autoFocus
                     placeholder="Enter your search query..."
-                    className="w-full px-4 py-2 h-10 bg-surface-offwhite text-text-primary rounded-l-full border border-border focus:outline-none"
+                    className="w-full px-4 py-2 h-10 bg-white text-text-primary rounded-l-full border border-border focus:outline-none"
                   />
                   <Button
                     type="submit"
@@ -271,7 +271,7 @@ const SearchPage: React.FC = () => {
                             <AccordionItem value={`item-${index}`}>
                               <AccordionTrigger>View Details</AccordionTrigger>
                               <AccordionContent>
-                                <pre className="text-xs overflow-auto bg-surface-offwhite p-4 rounded border border-border">
+                                <pre className="text-xs overflow-auto bg-white p-4 rounded border border-border">
                                   {JSON.stringify(result, null, 2)}
                                 </pre>
                               </AccordionContent>
@@ -305,7 +305,7 @@ const SearchPage: React.FC = () => {
                               <AccordionTrigger>View Details</AccordionTrigger>
                               <AccordionContent>
                                 <pre
-                                  className="text-xs bg-surface-offwhite p-4 rounded border border-border"
+                                  className="text-xs bg-white p-4 rounded border border-border"
                                   style={{ whiteSpace: 'pre-wrap' }}
                                 >
                                   {JSON.stringify(result, null, 2)}
@@ -339,7 +339,7 @@ const SearchPage: React.FC = () => {
                               <AccordionTrigger>View Details</AccordionTrigger>
                               <AccordionContent>
                                 <pre
-                                  className="text-xs bg-surface-offwhite p-4 rounded border border-border"
+                                  className="text-xs bg-white p-4 rounded border border-border"
                                   style={{ whiteSpace: 'pre-wrap' }}
                                 >
                                   {JSON.stringify(result, null, 2)}
@@ -375,7 +375,7 @@ const SearchPage: React.FC = () => {
                               <AccordionTrigger>View Details</AccordionTrigger>
                               <AccordionContent>
                                 <pre
-                                  className="text-xs bg-surface-offwhite p-4 rounded border border-border"
+                                  className="text-xs bg-white p-4 rounded border border-border"
                                   style={{ whiteSpace: 'pre-wrap' }}
                                 >
                                   {JSON.stringify(result, null, 2)}

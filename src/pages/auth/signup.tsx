@@ -58,7 +58,7 @@ const LoginPage: React.FC = () => {
 
   return (
     <Layout includeFooter={false}>
-      <div className="flex flex-col justify-center items-center min-h-screen bg-surface-offwhite">
+      <div className="flex flex-col justify-center items-center min-h-screen bg-white">
         <form
           onSubmit={handleSubmit}
           className="bg-white shadow-card rounded px-8 pt-6 pb-8 mb-4 w-full max-w-md"

@@ -243,7 +243,7 @@ const Index: React.FC = () => {
   return (
     <Layout pageTitle="Documents" includeFooter={false}>
       <main className="w-full flex flex-col container h-screen-[calc(100%-4rem)]">
-        <div className="relative flex-grow bg-surface-offwhite mt-[4rem] sm:mt-[4rem]">
+        <div className="relative flex-grow bg-white mt-[4rem] sm:mt-[4rem]">
           <div className="mx-auto max-w-6xl mb-12 mt-4 p-4 h-full">
             <DocumentsTable
               documents={filteredDocuments}

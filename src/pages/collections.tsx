@@ -201,7 +201,7 @@ const Index: React.FC = () => {
         containerObject={collection}
         className="w-64 h-full"
       />
-      <div className="absolute bottom-2 right-2 bg-gray-800 rounded-full p-1">
+      <div className="absolute bottom-2 right-2 bg-white rounded-full p-1">
         <UserRound className="w-4 h-4 text-gray-400" />
       </div>
     </div>

@@ -174,7 +174,7 @@ const Index: React.FC = () => {
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-4">
-                    <div className="bg-surface-offwhite p-4 rounded-full">
+                    <div className="bg-white p-4 rounded-full">
                       <UserRound size={40} />
                     </div>
                     <div>

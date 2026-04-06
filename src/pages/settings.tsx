@@ -327,7 +327,7 @@ const Index: React.FC = () => {
 
   return (
     <Layout pageTitle="Settings">
-      <main className="w-full flex flex-col min-h-screen container bg-surface-offwhite text-text-primary p-4 mt-4">
+      <main className="w-full flex flex-col min-h-screen container bg-white text-text-primary p-4 mt-4">
         <div className="mx-auto w-full max-w-5xl mb-12 mt-4">
           <div className="mt-8">
             <div className="flex justify-between items-center mb-4">
