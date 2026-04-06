@@ -205,7 +205,10 @@ const LoginPage: React.FC = () => {
           <div className="flex-grow">
             <div className="flex justify-center mb-6">
               <Image
-                src={(brandingConfig as any).loginLogo?.src || '/images/momentum-mark.svg'}
+                src={
+                  (brandingConfig as any).loginLogo?.src ||
+                  '/images/momentum-mark.svg'
+                }
                 alt={(brandingConfig as any).loginLogo?.alt || 'Momentum'}
                 width={64}
                 height={64}

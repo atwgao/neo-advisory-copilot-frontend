@@ -10,30 +10,18 @@ import {
 } from '@/components/ui/tooltip';
 
 const colorStyles = {
-  primary:
-    'bg-brand-red text-white hover:bg-brand-red-dark',
-  secondary:
-    'bg-brand-navy text-white hover:bg-brand-navy-light',
-  filled:
-    'bg-brand-red text-white hover:bg-brand-red-dark',
-  danger:
-    'bg-brand-red-dark text-white hover:bg-brand-red',
-  amber:
-    'bg-amber-500 text-white hover:bg-amber-600',
-  blue:
-    'bg-brand-blue-accent/10 text-brand-navy ring-1 ring-inset ring-brand-blue-accent/20 hover:bg-brand-blue-accent/20',
-  blue_filled:
-    'bg-brand-blue-accent text-brand-navy hover:opacity-90',
-  text:
-    'text-brand-red hover:text-brand-red-dark',
-  text_gray:
-    'text-text-muted hover:text-text-primary',
-  disabled:
-    'bg-gray-300 text-gray-500 cursor-not-allowed',
-  light:
-    'bg-surface-pale text-text-primary hover:bg-surface-offwhite',
-  transparent:
-    'bg-transparent text-text-primary hover:bg-surface-offwhite',
+  primary: 'bg-brand-red text-white hover:bg-brand-red-dark',
+  secondary: 'bg-brand-navy text-white hover:bg-brand-navy-light',
+  filled: 'bg-brand-red text-white hover:bg-brand-red-dark',
+  danger: 'bg-brand-red-dark text-white hover:bg-brand-red',
+  amber: 'bg-amber-500 text-white hover:bg-amber-600',
+  blue: 'bg-brand-blue-accent/10 text-brand-navy ring-1 ring-inset ring-brand-blue-accent/20 hover:bg-brand-blue-accent/20',
+  blue_filled: 'bg-brand-blue-accent text-brand-navy hover:opacity-90',
+  text: 'text-brand-red hover:text-brand-red-dark',
+  text_gray: 'text-text-muted hover:text-text-primary',
+  disabled: 'bg-gray-300 text-gray-500 cursor-not-allowed',
+  light: 'bg-surface-pale text-text-primary hover:bg-surface-offwhite',
+  transparent: 'bg-transparent text-text-primary hover:bg-surface-offwhite',
 };
 
 const shapeStyles = {

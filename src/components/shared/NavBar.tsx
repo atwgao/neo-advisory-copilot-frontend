@@ -28,7 +28,9 @@ const NavItem: React.FC<NavItemProps> = ({ href, children, isActive }) => (
   <Link
     href={href}
     className={`px-2 py-1 text-sm font-medium ${
-      isActive ? 'text-brand-red font-semibold' : 'text-white/70 hover:text-white'
+      isActive
+        ? 'text-brand-red font-semibold'
+        : 'text-white/70 hover:text-white'
     }`}
   >
     {children}
