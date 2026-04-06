@@ -394,15 +394,15 @@ const Sidebar: React.FC<SidebarProps> = ({
         </div>
       </div>
       <button
-        className={`fixed left-0 top-0 z-50 h-full w-6 bg-brand-navy flex items-center justify-center transition-transform duration-300 ease-in-out ${
+        className={`fixed left-0 top-0 z-50 h-full w-6 bg-gray-400/10 hover:bg-gray-400/20 flex items-center justify-center transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-80' : 'translate-x-0'
         }`}
         onClick={onToggle}
       >
         {isOpen ? (
-          <ChevronLeft className="h-6 w-6 text-white" />
+          <ChevronLeft className="h-6 w-6 text-text-muted" />
         ) : (
-          <ChevronRight className="h-6 w-6 text-white" />
+          <ChevronRight className="h-6 w-6 text-text-muted" />
         )}
       </button>
     </>
