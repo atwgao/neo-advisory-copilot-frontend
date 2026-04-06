@@ -1,2 +1,9 @@
-/assets
 node_modules
+.next
+.git
+.github
+.husky
+*.md
+!README.md
+.env*
+/assets
