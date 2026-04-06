@@ -295,8 +295,8 @@ const Index: React.FC = () => {
             className={`main-content ${sidebarIsOpen ? '' : 'sidebar-closed'}`}
             ref={contentAreaRef}
           >
-            {/* Mode Selector */}
-            <div className="mode-selector h-0">
+            {/* Mode Selector - hidden from main chat, available in sidebar */}
+            <div className="hidden">
               <Select value={mode} onValueChange={handleModeChange}>
                 <SelectTrigger className="w-[180px]">
                   <SelectValue placeholder="Select Mode" />

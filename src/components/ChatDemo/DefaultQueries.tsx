@@ -70,7 +70,7 @@ export const DefaultQueries: FC<DefaultQueriesProps> = ({ setQuery, mode }) => {
         className="h-16 w-16 opacity-50"
         alt="Momentum"
       />
-      <p className="text-sm text-text-muted font-light tracking-wide">
+      <p className="text-2xl text-text-muted font-light tracking-wide">
         How can I help you today?
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-4xl px-4">
