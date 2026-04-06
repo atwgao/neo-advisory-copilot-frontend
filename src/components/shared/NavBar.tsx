@@ -149,8 +149,8 @@ export const Navbar = forwardRef<React.ElementRef<'nav'>, NavbarProps>(
     return (
       <nav ref={ref} className="shadow z-50 w-full">
         {/* Logo row: navy with reduced opacity */}
-        <div className="bg-brand-navy/90 w-full px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center items-center h-16">
+        <div className="bg-brand-navy/80 w-full px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-center items-center h-20 py-2">
             <Link
               href={isSuperUser() ? '/' : '/documents'}
               className="flex items-center"
