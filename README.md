@@ -1,3 +1,19 @@
+> # ⚠️ This repo has moved
+>
+> The active codebase now lives in **[atwgao/mom-pde-engine](https://github.com/atwgao/mom-pde-engine)** — the umbrella monorepo for the Momentum PDE Engine. This repo (`neo-advisory-copilot-frontend`) was de-submoduled into `apps/pde-advisor-copilot-frontend/` as part of the 2026-04-27 cutover and is preserved here for archaeology only.
+>
+> The pre-cutover HEAD is preserved as the annotated tag **`pre-monorepo-archive-2026-04-27`** on this repo. To browse the pre-cutover state:
+>
+> ```bash
+> gh repo clone atwgao/neo-advisory-copilot-frontend
+> cd neo-advisory-copilot-frontend
+> git checkout pre-monorepo-archive-2026-04-27
+> ```
+>
+> All forward work happens in `mom-pde-engine`. This repo is **archived** (read-only).
+>
+> ---
+
 <h2 align="center">
 R2R Dashboard
 </h2>
